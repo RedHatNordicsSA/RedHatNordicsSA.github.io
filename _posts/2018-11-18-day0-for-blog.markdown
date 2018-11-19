@@ -22,6 +22,8 @@ available here: https://github.com/RedHatNordicsSA
 
 ## Finding the site
 
+<img src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png" alt="Github logo" width="200"/>
+
 Readme.md is fine format, but we wanted to have blog like docs
 about our automation tasks too. But how to keep them in one place?
 And whatever comes further along.
@@ -29,6 +31,8 @@ So why not take https://github.io into use?
 There you get familiar git way to contribute to articles we share.
 
 ## Having nicer look and feel
+
+<img src="https://getbootstrap.com/docs/4.1/assets/img/bootstrap-stack.png" alt="Bootstrap logo" width="200"/>
 
 Then we need some way to display the articles nicely, hopefully
 in blog format. This is now the first try with
@@ -41,6 +45,8 @@ That turned out to be nice layout, let's see if we can use it with
 [Jekyll](https://jekyllrb.com/) blog framework. This page is now the first
 result of it. To get started, e.g. watch
 [these great video tutorials](https://jekyllrb.com/tutorials/video-walkthroughs/)
+
+![Jekyll Logo](https://jekyllrb.com/img/logo-2x.png)
 
 By applying those above, I have now created our blog. Welcome. Next thing
 to do is to apply Bootstrap to the blog,
