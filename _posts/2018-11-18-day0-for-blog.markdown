@@ -27,7 +27,7 @@ available here: https://github.com/RedHatNordicsSA
 Readme.md is fine format, but we wanted to have blog like docs
 about our automation tasks too. But how to keep them in one place?
 And whatever comes further along.
-So why not take https://github.io into use?
+So why not take [Github Pages](https://github.io) into use?
 There you get familiar git way to contribute to articles we share.
 
 ## Having nicer look and feel
