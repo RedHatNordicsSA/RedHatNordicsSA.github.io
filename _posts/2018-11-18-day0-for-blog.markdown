@@ -63,3 +63,7 @@ So get git cloning: ```git clone git@github.com:RedHatNordicsSA/RedHatNordicsSA.
 
 Yours,
  [@ikkeT](https://twitter.com/ikkeT)
+
+## Update on Dec 21 2018
+
+I switched to [hacker theme](https://github.com/pages-themes/hacker) just because I can! No seriously, I didn't want drop to scss level, I rather have pre-made theme. And boy had I have to try many of them until found one with working ruby dependencies.

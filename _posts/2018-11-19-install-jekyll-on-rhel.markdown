@@ -28,12 +28,12 @@ Here are the command you need to install Jekyll on RHEL7:
 
 ```
 sudo subscription-manager repos --enable rhel-workstation-rhscl-7-rpms
-sudo yum install rh-ruby25 rh-ruby25-rubygem-bundler rh-ruby25-ruby-devel @development-tools
-scl enable rh-ruby25 bash
+sudo yum install rh-ruby23 rh-ruby23-rubygem-bundler rh-ruby23-ruby-devel @development-tools
+scl enable rh-ruby23 bash
 gem install jekyll
 jekyll new redhatnordicssa
 cd redhatnordicssa
-jekyll serve
+bundle exec jekyll serve
 ```
 
 ## What is that gibberish all about?
