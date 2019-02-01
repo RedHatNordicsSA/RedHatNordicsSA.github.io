@@ -35,8 +35,8 @@ One liner explanation and links to products:
 
 ## VM Guests
 
-Virttual machines are created in automated way. See VM creation blog (TBD) how
-we use basic Red Hat Enterprise Linux (RHEL) QCOW image from
+Virtual machines are created in automated way. See VM creation blog (TBD) how
+we use basic Red Hat Enterprise Linux (RHEL) KVM QCOW image from
 [access portal](access.redhat.com) as a template. Guests are automatically
 brought into management at VM creation time.
 

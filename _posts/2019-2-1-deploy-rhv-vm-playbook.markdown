@@ -12,7 +12,7 @@ author: ikke
 Hi,
 
 this time I'd like to describe a handy way we have for creating a virtual
-machine into [our lab](/lab-description). Normally in ITIL organisations,
+machine into [our lab](/lab-description). Normally in ITIL organisations
 it is something behind a slow ticket. We wanted to have demos for our work,
 and don't want to repeat manually the steps to do basic tasks. Instead we want
 to quickly do by press of a button, within few minutes:
@@ -47,7 +47,7 @@ tasks:
 ## Get IP address from IPAM server
 
 We want to have also IP addressing and name service automated. PhpIPAM is
-used to manage them. We use API to replace the network persons secret excel
+used to manage them. We use API to replace the network person's secret excel
 sheet :) You've been warned!
 
 ```
@@ -88,9 +88,9 @@ machines.
 ```
 See [ansible-role-rhv-vm here](https://github.com/RedHatNordicsSA/ansible-role-rhv-vm)
 
-# In the VM we want to do this configurations
+# We want to do these configurations in the VM
 
-Ansible waits for machine to boot up. Once it answers to SSH, we move on to do
+Ansible waits for machine to boot up. Once it allows SSH login, we move on to do
 VM internal configurations
 
 ```
