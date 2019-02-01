@@ -11,10 +11,10 @@ author: ikke
 
 Hi,
 
-This time I'd like to describe a handy way we have for creating a virtual
-machine. Normally in ITIL organisations, it is something behind a slow ticket.
+this time I'd like to describe a handy way we have for creating a virtual
+machine into [our lab](/lab-description). Normally in ITIL organisations, it is something behind a slow ticket.
 We wanted to have demos for our work, and don't want to repeat manually the
-steps to do basic tasks. Instead we want to quicly do by press of a button,
+steps to do basic tasks. Instead we want to quickly do by press of a button,
 within few minutes:
 
 ![rhv-vm-steps](./assets/images/blog-rhv-vm-steps.svg)
