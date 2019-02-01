@@ -9,7 +9,7 @@ We are Red Hat Solution Architects from Northern Europe, Nordics as they call ou
 
 Purpose of this page is to *open our demos to you*, dear reader. We hold quite much demos as part of our work, and see that they might be useful starting point for our customers too. So in the spirit of open source, naturally we want to get you quickly into speed by sharing our demo automation code here in Git.
 
-We have some of demo environments in use, and we start here by describing our demo environment in Cisco lab. They kindly donated us some sandbox. Feel free to start getting ideas by reading description of that lab in [Lab description blog (TBD)](./blogs/index.html).
+We have some of demo environments in use, and we start here by describing our demo environment in Cisco lab. They kindly donated us some sandbox. Feel free to start getting ideas by reading description of that lab in [Lab description](./lab-description.html).
 
 ## Automation samples available as code
 
