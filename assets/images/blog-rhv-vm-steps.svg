@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.2 (5c3e80d, 2017-08-06)"
+   sodipodi:docname="rhv-vm-steps.svg">
+  <defs
+     id="defs2">
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Lend"
+       style="overflow:visible;"
+       inkscape:isstock="true">
+      <path
+         id="path4602"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#cc0000;stroke-width:1pt;stroke-opacity:1;fill:#cc0000;fill-opacity:1"
+         transform="scale(0.8) rotate(180) translate(12.5,0)" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.1238492"
+     inkscape:cx="396.85039"
+     inkscape:cy="561.25984"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="true"
+     showguides="false"
+     inkscape:window-width="1490"
+     inkscape:window-height="1467"
+     inkscape:window-x="1373"
+     inkscape:window-y="180"
+     inkscape:window-maximized="0">
+    <inkscape:grid
+       type="xygrid"
+       id="grid4579" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       style="fill:#cc0000;fill-opacity:1;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 64.822914,8.6041667 78.052081,230.85416 H 64.822916 L 85.989581,273.1875 107.15624,230.85416 H 93.927081 L 107.15624,8.6041667 Z"
+       id="path4947"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccccccc" />
+    <rect
+       id="rect3699"
+       width="89.958336"
+       height="15.875001"
+       x="41.01041"
+       y="37.708332"
+       style="fill:#a30000;fill-opacity:1;stroke:#a30000;stroke-width:0.5291667;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       ry="4.4293566" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="53.671139"
+       y="48.84515"
+       id="text4508"><tspan
+         sodipodi:role="line"
+         id="tspan4506"
+         x="53.671139"
+         y="48.84515"
+         style="fill:#ffffff;fill-opacity:1;stroke-width:0.26458332">load secrets</tspan></text>
+    <rect
+       ry="4.4293566"
+       style="fill:#a30000;fill-opacity:1;stroke:#a30000;stroke-width:0.5291667;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       y="64.166664"
+       x="41.010414"
+       height="15.874997"
+       width="89.958328"
+       id="rect4521" />
+    <text
+       id="text4525"
+       y="74.488792"
+       x="70.783791"
+       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       xml:space="preserve"><tspan
+         style="fill:#ffffff;fill-opacity:1;stroke-width:0.26458332"
+         y="74.488792"
+         x="70.783791"
+         id="tspan4523"
+         sodipodi:role="line">get ip</tspan></text>
+    <rect
+       ry="4.418632"
+       style="fill:#a30000;fill-opacity:1;stroke:#a30000;stroke-width:0.58395934;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       y="11.906824"
+       x="41.234745"
+       height="15.118064"
+       width="89.509666"
+       id="rect4527" />
+    <text
+       id="text4531"
+       y="22.035889"
+       x="45.253048"
+       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       xml:space="preserve"><tspan
+         style="fill:#ffffff;fill-opacity:1;stroke-width:0.26458332"
+         y="22.035889"
+         x="45.253048"
+         id="tspan4529"
+         sodipodi:role="line">ask vm params</tspan></text>
+    <rect
+       id="rect4533"
+       width="89.958336"
+       height="15.875003"
+       x="41.01041"
+       y="90.625"
+       style="fill:#a30000;fill-opacity:1;stroke:#a30000;stroke-width:0.5291667;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       ry="4.4293566" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="46.343422"
+       y="102.34523"
+       id="text4537"><tspan
+         sodipodi:role="line"
+         id="tspan4535"
+         x="46.343422"
+         y="102.34523"
+         style="fill:#ffffff;fill-opacity:1;stroke-width:0.26458332">RHV create VM</tspan></text>
+    <rect
+       id="rect4539"
+       width="89.958328"
+       height="15.874995"
+       x="41.010414"
+       y="117.08332"
+       style="fill:#a30000;fill-opacity:1;stroke:#a30000;stroke-width:0.58395934;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       ry="4.418632" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="42.224812"
+       y="127.40794"
+       id="text4543"><tspan
+         sodipodi:role="line"
+         id="tspan4541"
+         x="42.224812"
+         y="127.40794"
+         style="fill:#ffffff;fill-opacity:1;stroke-width:0.26458332">set nameservice</tspan></text>
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot4545"
+       style="fill:black;fill-opacity:1;stroke:none;font-family:sans-serif;font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;letter-spacing:0px;word-spacing:0px"><flowRegion
+         id="flowRegion4547"><rect
+           id="rect4549"
+           width="450.24142"
+           height="140.09468"
+           x="88.990967"
+           y="403.54318" /></flowRegion><flowPara
+         id="flowPara4551" /></flowRoot>    <rect
+       ry="4.418632"
+       style="fill:#a30000;fill-opacity:1;stroke:#a30000;stroke-width:0.58395934;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       y="143.54167"
+       x="41.01041"
+       height="21.166662"
+       width="89.958336"
+       id="rect4553" />
+    <text
+       id="text4557"
+       y="151.15103"
+       x="58.856869"
+       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       xml:space="preserve"><tspan
+         style="fill:#ffffff;fill-opacity:1;stroke-width:0.26458332"
+         y="151.15103"
+         x="58.856869"
+         id="tspan4555"
+         sodipodi:role="line">register to</tspan><tspan
+         style="fill:#ffffff;fill-opacity:1;stroke-width:0.26458332"
+         y="164.3802"
+         x="58.856869"
+         sodipodi:role="line"
+         id="tspan4589"> satellite</tspan></text>
+    <rect
+       ry="4.418632"
+       style="fill:#a30000;fill-opacity:1;stroke:#a30000;stroke-width:0.58395934;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       y="175.29163"
+       x="39.687496"
+       height="15.875005"
+       width="92.604164"
+       id="rect4559" />
+    <text
+       id="text4563"
+       y="187.17462"
+       x="44.81897"
+       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       xml:space="preserve"><tspan
+         style="fill:#ffffff;fill-opacity:1;stroke-width:0.26458332"
+         y="187.17462"
+         x="44.81897"
+         sodipodi:role="line"
+         id="tspan4585">set date &amp; time</tspan></text>
+    <rect
+       id="rect4565"
+       width="92.604164"
+       height="26.458338"
+       x="39.687496"
+       y="201.74992"
+       style="fill:#a30000;fill-opacity:1;stroke:#a30000;stroke-width:0.58395934;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       ry="4.418632" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="85.514153"
+       y="210.56296"
+       id="text4569"><tspan
+         sodipodi:role="line"
+         x="85.514153"
+         y="210.56296"
+         style="text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.26458332"
+         id="tspan4581">register to user</tspan><tspan
+         sodipodi:role="line"
+         x="85.514153"
+         y="223.79213"
+         style="text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.26458332"
+         id="tspan4593">management</tspan></text>
+    <rect
+       ry="4.418632"
+       style="fill:#a30000;fill-opacity:1;stroke:#a30000;stroke-width:0.58395934;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       y="238.79167"
+       x="39.687496"
+       height="23.812494"
+       width="92.604164"
+       id="rect4571"
+       rx="0" />
+    <text
+       id="text4575"
+       y="247.00305"
+       x="85.989578"
+       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       xml:space="preserve"><tspan
+         style="text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.26458332"
+         y="247.00305"
+         x="85.989578"
+         id="tspan4573"
+         sodipodi:role="line">register to</tspan><tspan
+         style="text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.26458332"
+         y="260.23221"
+         x="85.989578"
+         sodipodi:role="line"
+         id="tspan4583">monitoring</tspan></text>
+  </g>
+</svg>
