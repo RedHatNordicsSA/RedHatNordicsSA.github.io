@@ -12,10 +12,10 @@ author: ikke
 Hi,
 
 this time I'd like to describe a handy way we have for creating a virtual
-machine into [our lab](/lab-description). Normally in ITIL organisations, it is something behind a slow ticket.
-We wanted to have demos for our work, and don't want to repeat manually the
-steps to do basic tasks. Instead we want to quickly do by press of a button,
-within few minutes:
+machine into [our lab](/lab-description). Normally in ITIL organisations,
+it is something behind a slow ticket. We wanted to have demos for our work,
+and don't want to repeat manually the steps to do basic tasks. Instead we want
+to quickly do by press of a button, within few minutes:
 
 ![rhv-vm-steps](./assets/images/blog-rhv-vm-steps.svg)
 
@@ -33,8 +33,9 @@ This step we do in Ansible Tower:
 ## Load secrets from Ansible Vault
 
 Next we want to load private information related to our lab from Ansible Vault.
-We store SSH key for automation, some passwords and other sensitive info. Tower
-is set with vault passwword, so it can read it before execution of tasks.
+We store SSH key for automation, some passwords and other sensitive info there.
+Tower is set with vault password, so it can read secrets before execution of
+tasks.
 
 ```
 tasks:
@@ -58,11 +59,11 @@ sheet :) You've been warned!
 {% endraw %}
 ```
 
-See [ansible-role-phpipam-get-ip here](https://github.com/RedHatNordicsSA/ansible-role-phpipam-get-ip)
+See [ansible-role-phpipam-get-ip here](https://github.com/RedHatNordicsSA/ansible-role-phpipam-get-ip).
 
 ## RHV, please create VM for us
 
-There is a RHEL template in RHV. Creating that is topic for another blog.
+We have RHEL template in RHV. Creating such is topic for another blog.
 Ansible has [ovirt modules](https://docs.ansible.com/ansible/latest/modules/list_of_cloud_modules.html#ovirt)
 which let's us command RHV. You could substitute that with VMware modules,
 until you migrate it to RHV. There are lot of options available. We use
