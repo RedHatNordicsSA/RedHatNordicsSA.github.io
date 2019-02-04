@@ -6,7 +6,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   If you use it, and it breaks your stuff, you get to keep the both pieces.
   Ansible, Tower, CloudForms, Satellite, RHV, IdM, RHEL, Gluster, Ceph
 show_downloads: false
-google_analytics:
+google_analytics: UA-133655123-1
 theme: jekyll-theme-hacker
 
 permalink: "/:title"
