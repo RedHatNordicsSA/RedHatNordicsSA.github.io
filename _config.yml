@@ -2,7 +2,9 @@ title: Red Hat Nordics SA Demo lab
 description: >- # this means to ignore newlines until "baseurl:"
   We Red Hat Solution Architects share content here which we
   have used to create our own demo labs. Some of it is seen useful starting
-  points to our customers too. Ansible, Tower, CloudForms, Satellite, RHV, IdM, RHEL, Gluster, Ceph
+  points to our customers too. This is not Red Hat official blog, nor service.
+  If you use it, and it breaks your stuff, you get to keep the both pieces.
+  Ansible, Tower, CloudForms, Satellite, RHV, IdM, RHEL, Gluster, Ceph
 show_downloads: false
 google_analytics:
 theme: jekyll-theme-hacker
