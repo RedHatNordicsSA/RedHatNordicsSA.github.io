@@ -24,7 +24,7 @@ I was asked how to write a new blog into our Jekyll. It's [really straight forwa
    layout: post
    title:  "Writing new blog on Jekyll"
    date:   2019-02-18 15:20:00 +0200
-   categories: jekyll
+   tags: jekyll
    author: ikke
    ---
    ```
