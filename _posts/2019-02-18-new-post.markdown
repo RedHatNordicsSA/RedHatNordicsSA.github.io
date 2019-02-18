@@ -1,0 +1,53 @@
+---
+layout: post
+title:  "Writing new blog on Jekyll"
+date:   2019-02-18 15:20:00 +0200
+tags: jekyll
+author: ikke
+---
+
+# How to write new blog on Jekyll
+
+Hi,
+
+I was asked how to write a new blog into our Jekyll. It's [really straight forward](https://jekyllrb.com/docs/posts/). Here's list of steps you need to do:
+
+1. Clone this repository: ```git clone git@github.com:RedHatNordicsSA/RedHatNordicsSA.github.io.git```
+2. Make sure you have Jekyll installed, [instructions for RHEL](https://redhatnordicssa.github.io/install-jekyll-on-rhel)
+3. If on RHEL, enter software channel: ```scl enable rh-ruby23 bash```
+4. Edit your blog in \_posts directory, create new file with name:
+   YYYY-MM-DD-topic.markdown.
+   e.g. ```atom _posts/2019-02-18-new-post.markdown```
+5. Add header to post, like in this topic:
+   ```
+   ---
+   layout: post
+   title:  "Writing new blog on Jekyll"
+   date:   2019-02-18 15:20:00 +0200
+   categories: jekyll
+   author: ikke
+   ---
+   ```
+6. Start writing using
+   [markdown language](https://www.markdownguide.org/basic-syntax/).
+   If you want to attach e.g pictures, add them to assets/images -directory.
+7. Once done, make sure the date and time in header is passed, or drop the post
+   into \_drafts folder. Jekyll uses the time to publish blog only after given
+   time.
+8. Try locally by starting locall Jekyll server in repository directory:
+  ```
+  bundle exec jekyll serve
+  ```
+  Now you can browse to http://localhost:4000 to review your blog. If you
+  dropped the blog into \_drafts/, add ```--drafts``` to command.
+9. Once happy, do ```git status``` to verify no junk is added, and do
+   ```git add``` for added files, and ```git commit``` and ```git push```
+10. After few seconds, your blog should be visible
+    [at site blog list](https://redhatnordicssa.github.io/blogs/).
+
+For reference, see [this blog markdown file](https://raw.githubusercontent.com/RedHatNordicsSA/RedHatNordicsSA.github.io/master/_posts/2019-02-18-new-post.markdown).
+
+# Happy Writing!
+
+BR,  
+[ikke](https://twitter.com/ikkeT)
