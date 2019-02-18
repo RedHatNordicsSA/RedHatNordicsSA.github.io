@@ -2,7 +2,7 @@
 layout: post
 title:  "Creating VM to RHV by Ansible"
 date:   2019-02-01 15:20:00 +0200
-categories: rhv
+tags: rhv
 author: ikke
 ---
 

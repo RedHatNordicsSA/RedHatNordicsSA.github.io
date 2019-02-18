@@ -2,7 +2,7 @@
 layout: post
 title:  "Day0 for this site"
 date:   2018-11-18 12:30:00 +0200
-categories: random
+tags: random
 author: ikke
 ---
 

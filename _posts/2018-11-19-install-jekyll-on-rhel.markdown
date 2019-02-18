@@ -2,7 +2,7 @@
 layout: post
 title:  "Install Jekyll on RHEL7"
 date:   2018-11-19 12:30:00 +0200
-categories: random
+tags: random
 author: ikke
 ---
 

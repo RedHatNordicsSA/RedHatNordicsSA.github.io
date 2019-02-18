@@ -2,7 +2,7 @@
 layout: post
 title:  "Writing new blog on Jekyll"
 date:   2019-02-18 15:20:00 +0200
-tags: jekyll
+tags: random
 author: ikke
 ---
 
