@@ -1,0 +1,22 @@
+<hr>
+<span>
+   <div>
+      {% if author.image %}
+         <img src="{{author.image}}" class="author-img">
+      {% endif %}
+      <div>
+          Written by {{author.name}} &nbsp;
+          {% if author.twitter %}
+            <a href="{{author.twitter}}" class="btn btn-twitter"><span class="icon"></span>Twitter</a>
+          {% endif %}
+          {% if author.linkedin %}
+            <a href="{{author.linkedin}}" class="btn btn-linkedin"><span class="icon"></span>Linkedin</a>
+          {% endif %}
+          {% if author.github %}
+            <a href="{{author.github}}" class="btn btn-github"><span class="icon"></span>Github</a>
+          {% endif %}
+      </div>
+   </div>
+   {{ author.bio }}
+</span>
+<br>

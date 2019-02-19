@@ -229,9 +229,20 @@ hr {
 }
 
 .btn-redhat .icon {
-  opacity: 0.6;
+  // opacity: 0.6;
   background: url("../images/shadowman.png") 0 0 no-repeat;
 }
+
+.btn-twitter .icon {
+  // opacity: 0.6;
+  background: url("../images/twitter-16.png") 0 0 no-repeat;
+}
+
+.btn-linkedin .icon {
+  opacity: 0.6;
+  background: url("../images/linkedin-3-16.png") 0 0 no-repeat;
+}
+
 
 /* Links
    a, a:hover, a:visited
