@@ -73,6 +73,7 @@ And the playbook look like this:
 ```
 - hosts: localhost
   become: true
+  connection: local
   vars:
   tasks:
     - name: install the 'Virtualization Host' package group
