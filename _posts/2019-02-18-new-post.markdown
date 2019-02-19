@@ -31,6 +31,8 @@ I was asked how to write a new blog into our Jekyll. It's [really straight forwa
 6. Start writing using
    [markdown language](https://www.markdownguide.org/basic-syntax/).
    If you want to attach e.g pictures, add them to assets/images -directory.
+   We use Hacker theme for now, see
+   [their example here](https://pages-themes.github.io/hacker/).
 7. Once done, make sure the date and time in header is passed, or drop the post
    into \_drafts folder. Jekyll uses the time to publish blog only after given
    time.
