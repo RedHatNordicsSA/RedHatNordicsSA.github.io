@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Install Vagrant and libvirt (KVM) on RHEL7"
-date:   2019-02-17 12:30:00 +0200
+date:   2019-02-18 16:30:00 +0200
 tags: random
 author: pgustafs
 ---
@@ -28,6 +28,8 @@ virtual machine environments in a single workflow.
 ```
 sudo subscription-manager repos --enable=rhel-7-server-rpms --enable=rhel-7-server-optional-rpms
 ```
+In case you have installed "workstation" variant, replace "server" with "workstation" in above.
+
 2. Install the 'Virtualization Host' package group
 ```
 sudo yum groupinstall "@Virtualization Platform"
@@ -65,7 +67,7 @@ export VAGRANT_PREFERRED_PROVIDERS=libvirt
 
 Nah, since I'm practicing an Automation first policy, I only executed one command;)
 ```
-ansible-playbook vagrant-libvirt.yml
+ansible-playbook -e "user=USER" vagrant-libvirt.yml
 ```
 And the playbook look like this:
 ```
@@ -84,9 +86,9 @@ And the playbook look like this:
         state: started
         enabled: yes
 
-    - name: Adding existing user '{{ user }}' to group libvirt
+    - name: Adding existing user {%raw%}{{ user }}{%endraw%} to group libvirt
       user:
-        name: '{{ user }}'
+        name: "{%raw%}{{ user }}{%endraw%}"
         groups: libvirt
         append: yes
 
@@ -96,7 +98,7 @@ And the playbook look like this:
         state: present
 
     - name: Install build dependencies for vagrant-libvirt plugin installation.
-      yum: 
+      yum:
         name:
           - libvirt-devel
           - ruby-devel
