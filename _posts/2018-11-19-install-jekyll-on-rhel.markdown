@@ -28,7 +28,7 @@ Here are the command you need to install Jekyll on RHEL7:
 
 ```
 sudo subscription-manager repos --enable rhel-workstation-rhscl-7-rpms
-sudo yum install rh-ruby23 rh-ruby23-rubygem-bundler rh-ruby23-ruby-devel
+sudo yum install rh-ruby23 rh-ruby23-rubygem-bundler rh-ruby23-ruby-devel zlib-devel
 sudo yum group install "Development Tools"
 scl enable rh-ruby23 bash
 gem install jekyll
