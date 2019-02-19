@@ -34,9 +34,11 @@ I was asked how to write a new blog into our Jekyll. It's [really straight forwa
 7. Once done, make sure the date and time in header is passed, or drop the post
    into \_drafts folder. Jekyll uses the time to publish blog only after given
    time.
-8. Try locally by starting locall Jekyll server in repository directory:
+8. Try locally by starting local Jekyll server in repository directory
+   (bundle install is here just in case you skipped something):
   ```
-  bundle exec jekyll serve
+  bundle install
+  jekyll serve
   ```
   Now you can browse to http://localhost:4000 to review your blog. If you
   dropped the blog into \_drafts/, add ```--drafts``` to command.
