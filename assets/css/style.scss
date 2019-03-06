@@ -197,6 +197,17 @@ notify {
   -webkit-font-smoothing: antialiased;
 }
 
+notify_green {
+  background-color: rgba(146, 212, 0, 0.1);
+  /*color: rgba(204, 0, 0, 0.8);*/
+  color: #121212;
+  padding: 10px 50px 10px 50px;
+  border-top:1px dotted #92d400;
+  border-bottom:1px dotted #92d400;
+  display: block;
+  -webkit-font-smoothing: antialiased;
+}
+
 c {
   font-family: 'Inconsolata', monospace;
   background-color: #2b2b2b;
