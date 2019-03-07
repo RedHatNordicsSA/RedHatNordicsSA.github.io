@@ -196,7 +196,7 @@ hr {
 
 .btn {
   display: inline-block;
-  background: -webkit-linear-gradient(top, rgba(110, 0, 0, 1), rgba(130, 0, 0, 1) 50%, rgba(110, 10, 10, 1) 50%, rgba(0, 0, 0, 1));
+  background: -webkit-linear-gradient(top, rgba(110, 0, 0, 1), rgba(130, 0, 0, 1) 50%, rgba(110, 10, 10, 1) 50%, rgba(90, 0, 0, 1));
   padding: 8px 18px;
   border-radius: 50px;
   border: 2px solid rgba(0, 0, 0, 0.7);
@@ -211,12 +211,12 @@ hr {
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
-.btn:link { color: rgba(255, 255, 255, 0.8); }
-.btn:visited { color: rgba(240, 0, 0, 1); }
-.btn:active { color: rgba(255, 255, 255, 0.8); }
+.btn:link { color: rgba(255, 255, 255, 1); }
+.btn:visited { color: rgba(200, 200, 200, 1); }
+.btn:active { color: rgba(255, 255, 255, 1); }
 
 .btn:hover {
-  background: -webkit-linear-gradient(top, rgba(130, 0, 0, 0.9), rgba(163, 0, 0, 0.7) 50%, rgba(90, 10, 10, 0.7) 50%, rgba(0, 0, 0, 0.9));
+  background: -webkit-linear-gradient(top, rgba(110, 0, 0, 0.9), rgba(130, 0, 0, 0.9) 50%, rgba(110, 10, 10, 0.9) 50%, rgba(90, 0, 0, 0.9));
   color: white;
 }
 
@@ -224,7 +224,7 @@ hr {
   display: inline-block;
   width: 16px;
   height: 16px;
-  margin: 1px 8px 0 0;
+  margin: 5px 8px 0 0;
   float: left;
 }
 
@@ -250,12 +250,9 @@ hr {
 
 .btn-light {
   display: inline-block;
-  background: -webkit-linear-gradient(top, rgba(163, 0, 0, 0.8), rgba(204, 35, 35, 0.7) 50%, rgba(163, 00, 00, 0.8) 50%, rgba(90, 0, 0, 1));
   padding: 2px 18px;
   border-radius: 50px;
-  border: 2px solid rgba(90, 0, 0, 0.7);
-  border-bottom: 2px solid rgba(163, 0, 0, 0.7);
-  border-top: 2px solid rgba(163, 0, 0, 1);
+  border: 2px solid rgba(0, 0, 0, 0.2);
   color: rgba(255, 255, 255, 0.8);
   font-family: 'Roboto', sans-serif;
   font-weight: bold;
@@ -265,12 +262,8 @@ hr {
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
-.btn-light:link { color: rgba(255, 255, 255, 0.9); }
-.btn-light:visited { color: rgba(204, 204, 204, 0.9); }
-.btn-light:active { color: rgba(255, 255, 255, 0.8); }
-
 .btn-light:hover {
-  background: -webkit-linear-gradient(top, rgba(163, 0, 0, 0.7), rgba(204, 0, 0, 0.5) 50%, rgba(163, 10, 10, 0.7) 50%, rgba(90, 0, 0, 0.9));
+  background: rgba( 150, 150, 150, 1);
   color: white;
 }
 
@@ -278,13 +271,13 @@ hr {
   display: inline-block;
   width: 16px;
   height: 16px;
-  margin: 1px 8px 0 0;
+  margin: 5px 8px 0 0;
   float: left;
 }
 
 .btn-light-github .icon {
-  opacity: 0.6;
-  background: url("../images/blacktocat.png") 0 0 no-repeat;
+  opacity: 0.8;
+  background: url("../images/blacktocat-black.png") 0 0 no-repeat;
 }
 
 .btn-light-redhat .icon {
@@ -293,12 +286,12 @@ hr {
 }
 
 .btn-light-twitter .icon {
-  opacity: 0.6;
+  opacity: 0.8;
   background: url("../images/twitter-16.png") 0 0 no-repeat;
 }
 
 .btn-light-linkedin .icon {
-  opacity: 0.6;
+  opacity: 0.8;
   background: url("../images/linkedin-3-16.png") 0 0 no-repeat;
 }
 
