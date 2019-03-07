@@ -478,26 +478,26 @@ Edit <c>tasks/main.yml</c>:
 - name: Install Apache.
   package:
     name: httpd
-    state: "{{ apache_package_state }}"
+    state: "{%raw%}{{ apache_package_state }}{%endraw%}"
 
 - name: Ensure Apache has selected state.
   service:
     name: httpd
-    state: "{{ apache_service_state }}"
-    enabled: "{{ apache_service_enabled }}"
+    state: "{%raw%}{{ apache_service_state }}{%endraw%}"
+    enabled: "{%raw%}{{ apache_service_enabled }}{%endraw%}"
 
 - name: Ensure firewalld has selected state.
   firewalld:
-    port: "{{ apache_listen_port }}/tcp"
+    port: "{%raw%}{{ apache_listen_port }}/tcp{%endraw%}"
     permanent: true
-    state: "{{ apache_firewall_state }}"
+    state: "{%raw%}{{ apache_firewall_state }}{%endraw%}"
 
 - name: Configure Apache listen port.
   lineinfile:
     path: /etc/httpd/conf/httpd.conf
     regexp: '^Listen '
     insertafter: '^#Listen '
-    line: "Listen {{ apache_listen_port }}"
+    line: "Listen {%raw%}{{ apache_listen_port }}{%endraw%}"
   notify: restart apache
 ```
 Edit <c>handlers/main.yml</c>:
