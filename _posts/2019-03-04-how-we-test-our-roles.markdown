@@ -8,14 +8,14 @@ author: pgustafs
 
 
 <p><banner_h>The Challenge</banner_h></p>
-We are heavily believers in that you should store your server infrastructure in a Git repository, so we decided to live as we preach! **everything that we install in our Demo environment should be automated with Ansible** and versioned by Git. This to:
+We are heavily believers in that you should store your server infrastructure in a Git repository, so we decided to live as we preach! **Everything that we install in our Demo environment should be automated with Ansible** and versioned by Git. This to:
 * Save **time** when setting up a demo environment
 * Fight the demo ghost - we need our demos to be **consistent** each time we deploy them
 * Being able to **reproduce** our infrastructure on new platforms(physical/virt/cloud) from time to time  
 * Get **traceability** on what changes have been made
-* Get an **imumutable** infrastructure - instead of troubleshooting simply create new infrastructure components
+* Get an **immutable** infrastructure - instead of troubleshooting simply create new infrastructure components
 
-This is quite cool since we now are describing our whole Infrastructure with code and all our code are versioned by git
+This is quite cool since we now are describing our whole infrastructure with code and all our code are versioned by git
 ([Infrastructure-as-Code[IaC]](https://en.wikipedia.org/wiki/Infrastructure_as_code)). **So far all good**. We started to collaborate across our Nordic team to created re-usable Ansible roles that we could use in our different automation workflows, but we **did not** implement a way to automatically and constantly execute and test our Ansible code, which lead to:
 * Many late nights
 * Roles got outdated, **code that is not automatically and constantly executed and tested will eventually decompose sooner or later!**
@@ -32,13 +32,13 @@ This is quite cool since we now are describing our whole Infrastructure with cod
 
 <p><banner_h>The Solution</banner_h></p>
 
-**Lesson learned**, the glory days of **Run it, watch it fail, run it again** is over. **We´re software developers now** and must start to threat our code as **code**, let's peek over the bulletproof wall to the dev guys & girls in the software development team and see if we can use something they have used for years? Hmm it seems like the **Test-driven development[TDD]** and **Continuous Integration[CI]** methodologies would solve our problems, right?. Great, is there any solid Open Source **Testing framework** for Ansible available ? It sure is, **September 26th, 2018** Ansible announced that they will adopt two new projects **molecule** and **ansible-lint**, which are great tools that now [Red Hat](http://redhat.com) intends to invest resources working with the community to make them even better. **kudos** to [Cisco](http://cisco.com) who transferred the molecule project over to the Red Hat Ansible team.
+**Lesson learned**, the glory days of **run it, watch it fail, run it again** is over. **We´re software developers now** and must start to threat our code as **code**, let's peek over the bulletproof wall to the dev guys & girls in the software development team and see if we can use something they have used for years? Hmm it seems like the **Test-driven development[TDD]** and **Continuous Integration[CI]** methodologies would solve our problems, right?. Great, is there any solid open source **testing framework** for Ansible available ? There sure is, **September 26th, 2018** Ansible announced that they will adopt two new projects **molecule** and **ansible-lint**, which are great tools that now [Red Hat](http://redhat.com) intends to invest resources working with the community to make them even better. **kudos** to [Cisco](http://cisco.com) who transferred the molecule project over to the Red Hat Ansible team.
 <p align="center">
   <img src="https://raw.githubusercontent.com/ansible/molecule/master/asset/molecule.png" width="256" title="Molecule Logo">
 </p>
 **[Molecule](https://github.com/ansible/molecule)** is the official testing framework for Ansible roles. It provides a streamlined way to create a virtualized environment to test the syntax and functionality of a role.
 From the Molecule docs:
->Molecule encourages an approach that results in consistently developed roles that are well-written, easily understood and maintained.
+>Molecule encourages an approach that results in consistently developed roles which are well-written, easily understood and maintained.
 
 **[Molecule](https://github.com/ansible/molecule)**:
 * Handles Project linting by invoking configurable linters (yamlling, ansible-lint)
@@ -49,13 +49,13 @@ From the Molecule docs:
 * pip installable - entire dev/test environment can happily live in a virtualenv
 
 **[Testinfra](https://testinfra.readthedocs.io/en/latest/)**:
-With Testinfra you can write unit tests in Python to test the actual state of your servers configured by Ansible. This is really great when you are starting to do Test-driven development of your roles. Normally when developing an Ansible role/playbook
+With Testinfra you can write unit tests in Python to test the actual state of your servers configured by Ansible. This is really great when you are starting to do test-driven development of your roles. Normally when developing an Ansible role/playbook
 you start writing the Ansible tasks, but now with this you are thinking ahead about tests and starts with writing the unit tests for your Ansible role instead. **Time spent here is well invested time**, especially if you are part of a big team that maintains many roles.   
 
 **[Tox](https://tox.readthedocs.io/en/latest/)**:
 Tox is a generic Python virtualenv management and test command line tool we use for test our roles against multiple versions of Ansible. As soon as a new version of Ansible engine is released we can automatically test all our roles against it.
 
-In this post I will focus on how you can use Molecule to Test-driven development of your Ansible roles and in the next post I will add some CI to it.  
+In this post I will focus on how you can use Molecule to test-driven development of your Ansible roles and in the next post I will add some CI to it.  
 
 <p><banner_h>Setup the development system</banner_h></p>
 ## Preparing your environment for installation
@@ -78,13 +78,13 @@ sudo subscription-manager repos --enable=rhel-7-server-rpms --enable=rhel-7-serv
 When testing your roles Molecule will spin up one or more instances onto it will execute your role.
 Molecule uses drivers for this, which let you choose the backend for your platforms. Docker, Vagrant, AWS, Google Cloud, etc. are all [drivers](https://molecule.readthedocs.io/en/latest/configuration.html?highlight=drivers). Platforms are the instances created using drivers. Each container or VM is a different platform that your code will be tested on.
 
-To make it simple, Molecule uses Ansible to manage the instances it operates on so basically Molecule support any provider that Ansible supports. In this guide i will use two different providers, **Docker**(default driver) and Vagrant backed by KVM.
+To make it simple, Molecule uses Ansible to manage the instances it operates on so basically Molecule support any provider that Ansible supports. In this guide i will use two different providers, **Docker** (default driver) and Vagrant backed by KVM.
 
 ### The Docker driver
 Docker is the default driver for Molecule, It's lightweight since containers have minimal footprint. And with the wide choice of container images available, you can easily test your Ansible role on different platforms like RHEL, SUSE, ubuntu etc. But since containers are what they are, (a convenient way to package applications) they are **not suitable for all use case**. They're no VM no matter how many workarounds and hacks you come up with like systemd in a container, bind-mounting host sockets and volumes, privileged containers and so on. So they definitely have their place but it really depends on the kind of role you're writing and testing. Generally, things like collecting info from the target platform, talking to APIs, ensuring config files are compliant, etc. are good candidates to be tested using Docker. On the other hand deploying applications, dealing with services, configuring networking, etc. are almost always best to test on VMs.
 
 ### Testing for RHEL platform
-There's another challenge with using Docker if the role is meant for the RHEL platform. That is, due to the required entitlements, one can only run RHEL container images on a subscribed RHEL system. This is not a problem for me since I am using RHEL as OS on my development system, but it can be if you are using for example centos, Fedora or OSX.
+There's another challenge with using Docker if the role is meant for the RHEL platform. That is, due to the required entitlements, one can only run RHEL container images on a subscribed RHEL system. This is not a problem for me since I am using RHEL as OS on my development system, but it can be if you are using for example CentOS, Fedora or OSX.
 
 ### Install Docker
 Install docker packages:
@@ -205,7 +205,7 @@ Layout:
 |   |   `-- molecule.yml
 |   |-- kvm
 |   |   `-- molecule.yml
-|   `-- shared                 <--- This dir containes files used by both scenarious
+|   `-- shared                 <--- This dir contains files used by both scenarios
 |       |-- playbook.yml
 |       |-- prepare.yml
 |       `-- tests
@@ -221,16 +221,16 @@ Layout:
 ```
 
 ## Important files
-\- <c>INSTALL.rst</c>: Instructions on how to install the dependencies for the driver in usea.  
+\- <c>INSTALL.rst</c>: Instructions on how to install the dependencies for the driver in use.  
 \- <c>molecule.yml</c>: The Molecule settings for the role. what driver to use, what OS to use, how to lint your role, what tests to run, etc.  
 \- <c>playbook.yml</c>: The converge playbook that will run the role. This should be configured with any custom variables and tasks needed for the role to work. Additional post-tasks can also be added for verifications.  
 \- <c>prepare.yml</c>: Some drivers will have a preparation playbook that uses the raw module to install Python.  
 \- <c>tests/test_default.py</c>: Basic Testinfra test, can be extended. If the you are not going to write any Python tests, the "molecule/<scenario>/tests" directory should be removed entirely and have the test disabled in **molecule.yml**.
 
-<notify><p markdown="1">For the remaining of this post I will use the **ansible-role-apache** role initialized from the **[rhnordicssa skeleton](https://github.com/RedHatNordicsSA/meta_skeleton)** with two different scenarious configured, **Docker** and **KVM**. If you'd like to see the example code, you can check out the **[GitHub repository](https://github.com/RedHatNordicsSA/ansible-role-apache)**.</p></notify>
+<notify><p markdown="1">For the remaining of this post I will use the **ansible-role-apache** role initialized from the **[rhnordicssa skeleton](https://github.com/RedHatNordicsSA/meta_skeleton)** with two different scenarios configured, **Docker** and **KVM**. If you'd like to see the example code, you can check out the **[GitHub repository](https://github.com/RedHatNordicsSA/ansible-role-apache)**.</p></notify>
 
 ### Configure Molecule (molecule.yml)
-Lets take a closer look at the Molecule configuration for the **kvm** scenarion <c>molecule/kvm/molecule.yml</c>:
+Let's take a closer look at the Molecule configuration for the **kvm** scenario <c>molecule/kvm/molecule.yml</c>:
 ```yaml
 dependency:
   name: galaxy
@@ -308,7 +308,7 @@ platforms:
     groups:
       - rhel
 ```
-Below tells Molecule to use Ansible for provisioning the instances on which your role will be tested on and it points out <c>molecule/shared/playbook.yml</c> as the converge playbook. **Note** that I do not store the converge playbook under the <c>molecule/scenatio_name/</c> directory, this cause I am using the same playbook for all scenarios and don't want to maintain several copies of it:
+Below tells Molecule to use Ansible for provisioning the instances on which your role will be tested on and it points out <c>molecule/shared/playbook.yml</c> as the converge playbook. **Note** that I do not store the converge playbook under the <c>molecule/scenatio_name/</c> directory, because I am using the same playbook for all scenarios and don't want to maintain several copies of it:
 ```yaml
 provisioner:
   name: ansible
@@ -322,7 +322,7 @@ scenario:
   name: kvm
 ```
 ### Execute your first Molecule test
-Lets execute a full test using **KVM** as the target platform, I know we have not created any Ansible code yet so all test should pass with green color.
+Lets execute a full test using **KVM** as the target platform, I know we have not created any Ansible code yet, so all test should pass with green color.
 ```
 source ~/molecule_ansible27/bin/activate
 cd ansible-role-apache
@@ -370,7 +370,7 @@ scenario:
 </div>
 </notify>
 ### Working with Molecule
-Molecule is great for testing your roles but it is also a great tool while developing you role, instead of executing a full test using <c>molecule test -s kvm</c> you can execute <c>molecule converge -s kvm</c>: which will create the virtual environment, run the test playbook.yml and leave the environment running. This is great cause then molecule don't have to re-create your test environment each time you want to test a new change during the development of the role, it will just run the playbook on the existing environment.
+Molecule is great for testing your roles but it is also a great tool while developing you role, instead of executing a full test using <c>molecule test -s kvm</c> you can execute <c>molecule converge -s kvm</c>: which will create the virtual environment, run the test playbook.yml and leave the environment running. This is great because then molecule don't have to re-create your test environment each time you want to test a new change during the development of the role, it will just run the playbook on the existing environment.
 
 This is usually how the flow looks like for me when writing a new role or modifying an existing role:
 ```
