@@ -76,7 +76,7 @@ There are at least two different ways of Let's Encrypt verifying your domain:
 Let's encrypt's server talks to either:
 1. Your DNS vendor to verify you own domain
 2. Your web site (OpenShift router) and verifies that FQDN leads to your web
-   page
+   page (see linked blog at bottom for this method)
 
 In this case I use the DNS method. Nice part with it is that it works even if
 your cluster would not be reachable from internet. For this to work, I
@@ -281,14 +281,14 @@ OpenShift users!
 
 Here are links to official documentation, and another blog that has a bit
 different way of setting the router address. It's definitely better for router.
-Perhaps you check the logic from there, and join it with this ansible. I run
-into that blog at the time I had already done mine. I thought to add it here as
-good reference.
+It is based on the non DNS way of ensuring web site, and will generate
+application specific certs instead of wildcard cert. It's a good reference
+for the next step for you to take.
 
 * [OpenShift SSL certs documentation](https://docs.openshift.com/container-platform/3.11/install_config/certificate_customization.html)
 * [OpenShift SSL certs renewing](https://docs.openshift.com/container-platform/3.11/install_config/redeploying_certificates.html)
 * [Great blog from Red Hat colleagues](https://eti.io/dynamic-ssl-certificates-using-letsencrypt-on-openshift/)
-  to do certs a bit different way, probably better way (too late for me :)
+  to do certs the other way for apps
 * [Certbot tool for Let's Encrypt certicates](https://certbot.eff.org/lets-encrypt/centosrhel7-other)
 * [acme controller for OpenShift](https://github.com/tnozicka/openshift-acme)
 * [acme script for Let's Encrypt certificates](https://github.com/Neilpang/acme.sh) supports variety of DNS
