@@ -285,6 +285,8 @@ It is based on the non DNS way of ensuring web site, and will generate
 application specific certs instead of wildcard cert. It's a good reference
 for the next step for you to take.
 
+* [Ansible tasks file we went through here](https://github.com/ikke-t/ocp-libvirt-infra-ansibles/blob/master/roles/ocp_bastion/tasks/main.yml)
+* [Ansible automation which sets up my test env](https://github.com/ikke-t/ocp-libvirt-infra-ansibles)
 * [OpenShift SSL certs documentation](https://docs.openshift.com/container-platform/3.11/install_config/certificate_customization.html)
 * [OpenShift SSL certs renewing](https://docs.openshift.com/container-platform/3.11/install_config/redeploying_certificates.html)
 * [Great blog from Red Hat colleagues](https://eti.io/dynamic-ssl-certificates-using-letsencrypt-on-openshift/)
