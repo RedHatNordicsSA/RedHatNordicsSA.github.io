@@ -23,11 +23,11 @@ Ansible wrapping helps maintenance and rebuild.
 
 # Environment description
 
-Like said, this is my hobby environment, but it's quite professional. These
-instructions would apply to any environment where you run containers on host. My
-environment is not Kubernetes cluster, but single host, so I use podman to run
-containers, and Systemd to control their state. Previously I was still running
-them using Docker, but it's not required anymore.
+Like said, this is my hobby environment, but it's quite professional. This could
+be IoT edge device case. These instructions would apply to any environment where
+you run containers on host. My environment is not Kubernetes cluster, but single
+host, so I use podman to run containers, and Systemd to control their state.
+Previously I was still running them using Docker, but it's not required anymore.
 
 I run services for home automation, and generic nerding at home:
 * [OpenHAB](https://www.openhab.org/) for home automation
@@ -62,12 +62,14 @@ container_image_cleanup](https://galaxy.ansible.com/ikke_t/container_image_clean
 to clean up container images I no longer need. In my nerding I run out of disk
 space due excessive amount of unused container images :)
 
-# What I want to do for each containers
+# What I want to do for each container
 
 I want for every container existence of:
 * systemctl service file
 * firewall ports open if needed
+* update container images by rerun (software version update)
 * shared volume if needed
+
 
 First two are taken care by [podman_container_systemd Ansible
 role](https://galaxy.ansible.com/ikke_t/podman_container_systemd). The rest I
