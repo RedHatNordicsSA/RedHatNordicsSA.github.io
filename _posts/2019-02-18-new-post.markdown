@@ -6,11 +6,8 @@ tags: random
 author: ikke
 ---
 
-# How to write new blog on Jekyll
-
-Hi,
-
-I was asked how to write a new blog into our Jekyll. It's [really straight forward](https://jekyllrb.com/docs/posts/). Here's list of steps you need to do:
+<p><banner_h>The Challenge - How to write new blog on Jekyll</banner_h></p>
+I was asked how to write a new blog into our Jekyll. It's [really straight forward](https://jekyllrb.com/docs/posts/). Here's list of steps you need to do.
 
 1. Clone this repository: ```git clone git@github.com:RedHatNordicsSA/RedHatNordicsSA.github.io.git```
 2. Make sure you have Jekyll installed, [instructions for RHEL](https://redhatnordicssa.github.io/install-jekyll-on-rhel)

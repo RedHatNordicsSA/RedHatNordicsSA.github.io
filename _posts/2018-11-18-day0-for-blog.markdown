@@ -7,8 +7,7 @@ author: ikke
 ---
 
 
-# Day0 for this site, Welcome!
-
+<p><banner_h>Welcome!</banner_h></p>
 Last Friday we had a hack day amongst our Red Hat Nordics SA colleagues.
 During such hackdays we spend time together to enhance our demos,
 and nowadays specificly our Demo LAB. Yes, we lucky bastards got our

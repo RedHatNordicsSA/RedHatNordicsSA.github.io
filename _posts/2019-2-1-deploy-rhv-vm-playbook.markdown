@@ -7,11 +7,8 @@ author: ikke
 ---
 
 
-# Automating VM creation
-
-Hi,
-
-this time I'd like to describe a handy way we have for creating a virtual
+<p><banner_h>The Challenge - Automating VM creation</banner_h></p>
+This time I'd like to describe a handy way we have for creating a virtual
 machine into [our lab](/lab-description). Normally in ITIL organisations
 it is something behind a slow ticket. We wanted to have demos for our work,
 and don't want to repeat manually the steps to do basic tasks. Instead we want

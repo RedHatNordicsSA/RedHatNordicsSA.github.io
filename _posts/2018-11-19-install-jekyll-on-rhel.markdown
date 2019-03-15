@@ -6,12 +6,8 @@ tags: random
 author: ikke
 ---
 
-
-# How I installed Jekyll on RHEL7
-
-Hi,
-
-while I was creating this blog I needed to get [Jekyll](https://jekyllrb.com/)
+<p><banner_h>How I installed Jekyll on RHEL7</banner_h></p>
+While I was creating this blog I needed to get [Jekyll](https://jekyllrb.com/)
 tooling on my laptop. I happen to be fan of Linux, and decided to eat our own
 dogfood. I recently installed RHEL7 on my laptop instead of the normal Fedora.
 

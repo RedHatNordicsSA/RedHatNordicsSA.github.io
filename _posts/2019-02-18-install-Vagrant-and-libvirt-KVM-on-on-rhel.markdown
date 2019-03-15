@@ -7,14 +7,12 @@ author: pgustafs
 ---
 
 
-# How I installed Vagrant and libvirt (KVM) on RHEL7
-
-Hi,
-
+<p><banner_h>The Challenge - Vagrant and libvirt (KVM) on RHEL7</banner_h></p>
 While working with [Molecule](https://github.com/ansible/molecule)-based tests on our Ansible roles, I had to install vagrant
-and libvirt (KVM) on my RHEL7 machine to quickly spin up instances for test purposes. 
+and libvirt (KVM) on my RHEL7 machine to quickly spin up instances for test purposes.
 (will cover the Molecule stuff in a later post). The advantage of using Vagrant is that it
 downloads the pre-built Vagrant boxes that are ready to be consumed with in no-time.
+
 A **Box** is a package that contains the base image of the VM. (Image of the operating system (template))
 Boxes are stored in repositories and by default vagrant uses the HashiCorp repository at [https://vagrantcloud.com/search](https://vagrantcloud.com/search)
 but you can also create your own Box and store it in **~/.vagrant.d/boxes**.
@@ -39,7 +37,7 @@ sudo yum groupinstall "@Virtualization Platform"
 sudo systemctl start libvirtd.service
 sudo systemctl enable libvirtd.service
 ```
-4. Add your user to the libvirt group (make life easier for yourself) 
+4. Add your user to the libvirt group (make life easier for yourself)
 ```
 sudo usermod -aG libvirt USER
 ```
