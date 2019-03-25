@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="1122.5197"
+   height="793.70081"
+   viewBox="0 0 297 210"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.2 (5c3e80d, 2017-08-06)"
+   sodipodi:docname="awx-ansibles.svg"
+   inkscape:export-filename="/home/itengval/src/RedHatNordicsSA.github.io/assets/images/awx-ansibles.png"
+   inkscape:export-xdpi="78"
+   inkscape:export-ydpi="78">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.29176"
+     inkscape:cx="215.45954"
+     inkscape:cy="388.02313"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer2"
+     showgrid="true"
+     units="px"
+     inkscape:window-width="1920"
+     inkscape:window-height="1016"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     showguides="true"
+     inkscape:guide-bbox="true">
+    <inkscape:grid
+       type="xygrid"
+       id="grid843" />
+    <sodipodi:guide
+       position="23.812501,142.875"
+       orientation="1,0"
+       id="guide4616"
+       inkscape:locked="false" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-87)">
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot821"
+       style="fill:black;fill-opacity:1;stroke:none;font-family:sans-serif;font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;letter-spacing:0px;word-spacing:0px"><flowRegion
+         id="flowRegion823"><rect
+           id="rect825"
+           width="311.50104"
+           height="262.31668"
+           x="43.39798"
+           y="49.184376" /></flowRegion><flowPara
+         id="flowPara827" /></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot4545"
+       style="fill:black;fill-opacity:1;stroke:none;font-family:sans-serif;font-style:normal;font-weight:normal;font-size:17.33333333px;line-height:1.25;letter-spacing:0px;word-spacing:0px;"><flowRegion
+         id="flowRegion4547"
+         style="font-size:17.33333333px;"><rect
+           id="rect4549"
+           width="160"
+           height="90"
+           x="80"
+           y="173.70081"
+           style="font-size:17.33333333px;" /></flowRegion><flowPara
+         id="flowPara4551" /></flowRoot>  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="awx-text">
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#808080;stroke-width:0.79374999;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect815"
+       width="63.5"
+       height="34.395828"
+       x="30.427082"
+       y="32.729172"
+       ry="4.1294312" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#4d4d4d;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="62.182682"
+       y="41.006088"
+       id="text819"><tspan
+         sodipodi:role="line"
+         id="tspan817"
+         x="62.182682"
+         y="41.006088"
+         style="font-size:4.58611107px;text-align:center;text-anchor:middle;fill:#4d4d4d;fill-opacity:1;stroke-width:0.26458332">run-aws.yml</tspan></text>
+    <path
+       style="fill:none;stroke:#808080;stroke-width:0.5291667;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 44.979166,43.312509 c 34.395833,0 34.395833,0 34.395833,0"
+       id="path4543"
+       inkscape:connector-curvature="0" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:0.5;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#4d4d4d;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="38.608253"
+       y="50.006508"
+       id="text4555"><tspan
+         sodipodi:role="line"
+         id="tspan4553"
+         x="38.608253"
+         y="50.006508"
+         style="font-size:4.58611059px;line-height:0.5;fill:#4d4d4d;stroke-width:0.26458332">- define port number</tspan><tspan
+         sodipodi:role="line"
+         x="38.608253"
+         y="55.356743"
+         style="font-size:4.58611059px;line-height:0.5;fill:#4d4d4d;stroke-width:0.26458332"
+         id="tspan4557">- define admin creds</tspan><tspan
+         sodipodi:role="line"
+         x="38.608253"
+         y="60.706974"
+         style="font-size:4.58611059px;line-height:0.5;fill:#4d4d4d;stroke-width:0.26458332"
+         id="tspan4578">- define storage name</tspan></text>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer3"
+     inkscape:label="awx-pod-text">
+    <rect
+       ry="4.1294312"
+       y="82.47084"
+       x="30.427082"
+       height="31.750006"
+       width="63.5"
+       id="rect829"
+       style="fill:#ffffff;fill-opacity:1;stroke:#808080;stroke-width:0.79374999;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <text
+       id="text833"
+       y="89.19075"
+       x="62.24762"
+       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#4d4d4d;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       xml:space="preserve"><tspan
+         style="font-size:4.58611107px;text-align:center;text-anchor:middle;fill:#4d4d4d;stroke-width:0.26458332"
+         y="89.19075"
+         x="62.24762"
+         id="tspan831"
+         sodipodi:role="line">aws_pod</tspan></text>
+    <path
+       inkscape:connector-curvature="0"
+       id="path4614"
+       d="m 44.979166,91.731249 c 34.395833,0 34.395833,0 34.395833,0"
+       style="fill:none;stroke:#808080;stroke-width:0.5291667;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:0.5;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#4d4d4d;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="38.28643"
+       y="98.310966"
+       id="text4555-0"><tspan
+         sodipodi:role="line"
+         id="tspan4553-6"
+         x="38.28643"
+         y="98.310966"
+         style="font-size:4.58611012px;line-height:0.5;fill:#4d4d4d;stroke-width:0.26458332">- create awx kube file</tspan><tspan
+         sodipodi:role="line"
+         x="38.28643"
+         y="103.6612"
+         style="font-size:4.58611012px;line-height:0.5;fill:#4d4d4d;stroke-width:0.26458332"
+         id="tspan4578-3">- create storage</tspan><tspan
+         sodipodi:role="line"
+         x="38.28643"
+         y="109.01144"
+         style="font-size:4.58611012px;line-height:0.5;fill:#4d4d4d;stroke-width:0.26458332"
+         id="tspan4669">- define image list</tspan></text>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer4"
+     inkscape:label="p-c-s-text">
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#808080;stroke-width:0.79374999;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect835"
+       width="92.604164"
+       height="52.845966"
+       x="15.875"
+       y="129.10815"
+       ry="4.1294312" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#4d4d4d;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="62.177082"
+       y="138.47388"
+       id="text839"><tspan
+         sodipodi:role="line"
+         id="tspan837"
+         x="62.177082"
+         y="138.47388"
+         style="font-size:4.58611107px;text-align:center;text-anchor:middle;fill:#4d4d4d;stroke-width:0.26458332">podman_containers_systemd</tspan></text>
+    <path
+       style="fill:none;stroke:#808080;stroke-width:0.5291667;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 27.913541,141.47323 H 96.440624"
+       id="path4645"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <text
+       id="text4651"
+       y="148.05234"
+       x="23.73435"
+       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:0.5;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#4d4d4d;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       xml:space="preserve"><tspan
+         style="font-size:4.58611012px;line-height:0.5;fill:#4d4d4d;stroke-width:0.26458332"
+         y="148.05234"
+         x="23.73435"
+         id="tspan4647"
+         sodipodi:role="line">- install podman</tspan><tspan
+         style="font-size:4.58611012px;line-height:0.5;fill:#4d4d4d;stroke-width:0.26458332"
+         y="153.40257"
+         x="23.73435"
+         sodipodi:role="line"
+         id="tspan4667">- pull container images</tspan><tspan
+         id="tspan4649"
+         style="font-size:4.58611012px;line-height:0.5;fill:#4d4d4d;stroke-width:0.26458332"
+         y="158.75281"
+         x="23.73435"
+         sodipodi:role="line">- create systemd file for podman</tspan><tspan
+         style="font-size:4.58611012px;line-height:0.5;fill:#4d4d4d;stroke-width:0.26458332"
+         y="164.10304"
+         x="23.73435"
+         sodipodi:role="line"
+         id="tspan4671">  and use above awx.yml as config</tspan><tspan
+         style="font-size:4.58611012px;line-height:0.5;fill:#4d4d4d;stroke-width:0.26458332"
+         y="169.45328"
+         x="23.73435"
+         sodipodi:role="line"
+         id="tspan4673">- start AWX service</tspan><tspan
+         style="font-size:4.58611012px;line-height:0.5;fill:#4d4d4d;stroke-width:0.26458332"
+         y="174.8035"
+         x="23.73435"
+         sodipodi:role="line"
+         id="tspan4675">- open firewall port</tspan></text>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer5"
+     inkscape:label="arrows">
+    <g
+       transform="rotate(89.553305,87.877606,169.1464)"
+       inkscape:transform-center-y="-18.235829"
+       inkscape:transform-center-x="25.307402"
+       id="g4681">
+      <rect
+         style="fill:#80b3ff;fill-opacity:1;stroke:#80b3ff;stroke-width:0.79374999;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect4677"
+         width="13.52369"
+         height="5.613605"
+         x="30.364521"
+         y="191.61726"
+         ry="2.1952412" />
+      <path
+         style="fill:#80b3ff;stroke:#80b3ff;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 42.333333,188.52084 v 11.90625 l 7.9375,-6.61459 z"
+         id="path4679"
+         inkscape:connector-curvature="0" />
+    </g>
+    <g
+       transform="translate(4.1991046e-8,-87.000001)"
+       id="g4745">
+      <g
+         transform="rotate(89.553305,68.036161,188.83376)"
+         inkscape:transform-center-y="-18.235829"
+         inkscape:transform-center-x="25.307402"
+         id="g4541">
+        <rect
+           style="fill:#80b3ff;fill-opacity:1;stroke:#80b3ff;stroke-width:0.79374999;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           id="rect841"
+           width="13.52369"
+           height="5.613605"
+           x="30.364521"
+           y="191.61726"
+           ry="2.1952412" />
+        <path
+           style="fill:#80b3ff;stroke:#80b3ff;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="m 42.333333,188.52084 v 11.90625 l 7.9375,-6.61459 z"
+           id="path4537"
+           inkscape:connector-curvature="0" />
+      </g>
+    </g>
+  </g>
+</svg>
