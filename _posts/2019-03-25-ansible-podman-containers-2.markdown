@@ -9,10 +9,10 @@ author: ikke
 ---
 
 <p><banner_h>The Challenge</banner_h></p> Now that we know how to run single
-container with Podman ([part
+containers with Podman ([part
 1/2](https://redhatnordicssa.github.io/ansible-podman-containers-1)) , it's time
 to find out how we can run several containers in a pod, like docker-compose did,
-and how kubernetes places containers into sigle pod. We use Ansible and Podman
+and how kubernetes places containers into single pod. We use Ansible and Podman
 for that.
 
 ![podman-logo](https://github.com/containers/libpod/raw/master/logo/podman-logo.png){: height="80px"}
@@ -47,16 +47,17 @@ Well, good news is that you can do it, almost just simple as that :)
 
 # Use case?
 
-Personally I just wanted as easy as possible way of running several containers
-at once to provide a service. I run AWX (Ansible Tower upstream) at home for my
-personal stuff, and I thought it would make good sample case to this blog.
+Personally I just wanted an as easy as possible way of running several
+containers at once to provide a service. I run AWX (Ansible Tower upstream) at
+home for my personal stuff, and I thought it would make good sample case to this
+blog.
 
-Industry use case could be you produce and run containers in cloud using
+The industry use case could be you produce and run containers in cloud using
 OpenShift Container Platform. But you need in some cases run parts of
 application in traditional servers. Think of pushing parts of stack into e.g.
-industrial plant in Industrial Internet of Things (IIoT) case.
+an industrial plant in Industrial Internet of Things (IIoT) case.
 
-For this exercise I checked what [AWX docker installer](https://github.com/ansible/awx/blob/devel/installer/roles/local_docker/tasks/standalone.yml) does. I converted it to Podman commands. It requires steps:
+For this exercise I checked what [AWX docker installer](https://github.com/ansible/awx/blob/devel/installer/roles/local_docker/tasks/standalone.yml) does. I converted it to Podman commands. It does the following steps:
 
 1. start pod
 2. insert postgres containers
@@ -65,34 +66,35 @@ For this exercise I checked what [AWX docker installer](https://github.com/ansib
 5. insert awx_tasks container
 6. insert awx_web container
 
-Some of those containers need storage from host to survice updates and restarts,
-and pod needs to have port 80 (www) exposed from awx_web container. Pod get's
-created by command ```podman pod create awx``` and containers are inserted to
-awx pod by  ```podman run -dt --pod awx ...```, like you see from Brent's blog.
+Some of those containers need storage from host to survive updates and restarts,
+and pod needs to have port 80 (www) exposed from awx_web container. The pod
+get's created by command ```podman pod create awx``` and containers are inserted
+to awx pod by  ```podman run -dt --pod awx ...```, like you see from Brent's
+blog.
 
-I got all that done by running Ansible command module 6 times. But I find it
-way nicer to control such complicated stack by single kubernetes yaml
+I got all that done by running the Ansible command module 6 times. But I find it
+way nicer to control such a complicated stack by single kubernetes yaml
 configuration file instead.
 
-I have based my Ansible playbooks on steps described in excellent Podman blogs
+I have based my Ansible playbooks on steps described in an excellent Podman blog
 by Brent Baude. See the first two links at the bottom.
 
 # Describing pod and containers in single yaml
 
-After reading Brent's second blog from list at bottom, I thought that's the way
-how I want to manage pods and containers. One clear yaml file which can be
-templated for ansible, and that file passed as parameter for systemd pod service
-file. That way it keeps clean and simple.
+After reading Brent's second blog from the list at bottom, I thought that's the
+way how I want to manage pods and containers. One clear yaml file which can be
+templated for ansible, and that file is passed as parameter for systemd pod
+service file. That way it keeps it clean and simple.
 
 Here is the architecture of running AWX in one pod, using separate containers
 for different services.
 
 ![awx-pod](/assets/images/awx-pod.png)
 
-Here's snipplet of my awx.yml defining the pod. Pay attention how you can define
-host mount points for persistent storage, and just keep listing containers
-with unique settings. There could be CPU/mem limits, privilege escalation and
-what ever variables you are used to set to any container.
+Here's the snippet of my awx.yml defining the pod. Pay attention how you can
+define host mount points for the persistent storage, and just keep listing
+containers with unique settings. There could be CPU/mem limits, privilege
+escalation and whatever variables you normally set for a container.
 
 ```
 {%raw%}
@@ -157,9 +159,9 @@ spec:
 See the [full file
 here](https://github.com/ikke-t/awx_pod/blob/master/templates/awx.yml.j2).
 Kubernetes yaml is easy to read and understand, if you are into containers.
-Also, bonus being there are tons of examples running stuff on kubernetes, and
-you can snatch the configuration from such example also. This is really close to
-kubernetes configuration file format.
+Also, a bonus is that there are tons of examples running stuff on kubernetes,
+and you can also snatch the configuration from such example. This is really
+close to kubernetes configuration file format.
 
 # How does this yaml get used by systemd?
 
@@ -168,14 +170,14 @@ shows what happens behind the run-aws.yml playbook you saw in the first chapter.
 
 ![awx-pod](/assets/images/awx-ansibles.png)
 
-You see from above run-aws.yml depends on two Ansible roles:
+You see from above that run-aws.yml depends on two Ansible roles:
 
 1. [aws_pod](https://github.com/ikke-t/awx_pod)
 2. [podman_container_systemd](https://github.com/ikke-t/podman-container-systemd)
 
 After writing the first blog of this series, I added new role 'awx_pod' for
 creating awx.yml kubernetes file, and pass it to 'podman_container_systemd'.
-It also creates the needed directories for exported volumes and creates list
+It also creates the needed directories for exported volumes and creates a list
 of required container images. See the [awx_pod task list here](https://github.com/ikke-t/awx_pod/blob/master/tasks/main.yml),
 it's light weight.
 
@@ -223,7 +225,7 @@ images.
 {%endraw%}
 ```
 
-And this is how simple [systemd service file](https://github.com/ikke-t/podman-container-systemd/blob/master/templates/systemd-service-pod.j2) is now, as parameters are in yaml:
+And this is how simple [systemd service file](https://github.com/ikke-t/podman-container-systemd/blob/master/templates/systemd-service-pod.j2) it is now, as parameters are in yaml:
 
 ```
 {%raw%}
@@ -276,10 +278,11 @@ We are done!
 https://kojipkgs.fedoraproject.org//packages/podman/1.2.0/24.dev.git0458daf.fc31/x86_64/podman-1.2.0-24.dev.git0458daf.fc31.x86_64.rpm. Be patient, this all will likely be in
   normal package repositories soon.
 * Even if I use AWX for this hobby stuff, remember it's upstream project, and
-  break at any time and likely gets your dog pregnant. Use Tower for production.
+  may break at any time and likely gets your dog pregnant. Use Ansible Tower
+  for production.
 * I still need to understand selinux labels better for the exported volumes.
-  It perhaps requires still some development effort. Hopefully it's user error
-  :)
+  It perhaps requires still some development effort. Hopefully the problems are
+  user errors :)
 * If you want to remove all above installed stuff, run
   ```ansible-playbook -i my-awx-host, -b -e container_state=absent run-awx.yml```
 
