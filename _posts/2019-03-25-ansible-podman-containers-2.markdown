@@ -280,9 +280,6 @@ https://kojipkgs.fedoraproject.org//packages/podman/1.2.0/24.dev.git0458daf.fc31
 * Even if I use AWX for this hobby stuff, remember it's upstream project, and
   may break at any time and likely gets your dog pregnant. Use Ansible Tower
   for production.
-* I still need to understand selinux labels better for the exported volumes.
-  It perhaps requires still some development effort. Hopefully the problems are
-  user errors :)
 * If you want to remove all above installed stuff, run
   ```ansible-playbook -i my-awx-host, -b -e container_state=absent run-awx.yml```
 
