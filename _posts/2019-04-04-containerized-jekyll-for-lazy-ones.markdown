@@ -82,5 +82,4 @@ Happy blogging!
 
 References:
 
-Ilkka's original entry how to write a blog entry: [Writing new blog on
-Jekyll](./new-post)
+Ilkka's original [Writing new blog on Jekyll](./new-post)
