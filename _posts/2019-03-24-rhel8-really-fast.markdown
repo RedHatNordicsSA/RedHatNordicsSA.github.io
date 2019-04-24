@@ -156,6 +156,7 @@ one
 
 * Create your Composer blueprint. Create the file: /var/lib/lorax/composer/blueprints/rhel8-base.toml
 and paste in:
+
 ```
 name = "rhel8-base"
 description = "A general purpose rhel8 image"
@@ -259,6 +260,7 @@ sudo c_vm name-of-vm
 ```
 
 Example output
+
 ```
 [mglantz@darkred templates]$ time sudo c_vm mtest15
 Formatting '/var/lib/libvirt/images/mtest15.qcow2', fmt=qcow2 size=16106127360 backing_file=/home/mglantz/code/ansible/vm/rhel8-base-0.6.0.qcow2 cluster_size=65536 lazy_refcounts=off refcount_bits=16
