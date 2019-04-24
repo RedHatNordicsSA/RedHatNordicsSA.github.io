@@ -129,12 +129,11 @@ For general purpose KVM, edit: /usr/share/lorax/composer/qcow2.ks
 
 After the below lines
 ```
-# Clear /etc/machine-id
 rm /etc/machine-id
 touch /etc/machine-id
 ```
 
-And before the line coming after ``touch /etc/machine-id``, eg:
+And before the line coming after touch /etc/machine-id
 ```
 %end
 ```
