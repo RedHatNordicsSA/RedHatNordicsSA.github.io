@@ -100,10 +100,9 @@ createrepo -v /var/www/html/rhel-8-for-x86_64-apptreams-htb-rpms/ -g $(ls /var/w
 ```
 
 * Create local repository files which points to your local repos which you've now created
-{% highlight ruby %}
-{% raw %}
+
 cat << EOF >/etc/yum.repos.d/rhel.repo
-[baseos-rpms]
+{% raw %}[baseos-rpms]{% endraw %}
 name=baseos-rpms
 baseurl=http://localhost/rhel-8-for-x86_64-baseos-htb-rpms
 enabled=1
@@ -111,15 +110,13 @@ gpgcheck=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release
 
 
-[appstream-rpms]
+{% raw %}[appstream-rpms]{% endraw %}
 name=appstream-rpms
 baseurl=http://localhost/rhel-8-for-x86_64-appstream-htb-rpms
 enabled=1
 gpgcheck=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release
 EOF
-{% endraw %}
-{% endhighlight %}
 
 * Edit the Composer kickstart for your VM platform and input below
 optimizations, they'll will reduce the boot time of your RHEL8 instance down to
