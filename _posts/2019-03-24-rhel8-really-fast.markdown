@@ -36,7 +36,7 @@ to spin up, is pain. Even worse, kickstarting a VM typically takes 30 minutes.
 Also, to cater for future FaaS ([Function-as-a-Service](https://en.wikipedia.org/wiki/Function_as_a_service)) and other
 get-it-when-you-need-it architectures where a VM get's provisioned or spun-up
 triggered by incoming traffic to a load balancer or etc, then you need to get
-``much faster``.
+much faster.
 
 <p><banner_h>You convinced me, teach me how</banner_h></p>
 Let's get started. From here on, there will only be step-by-step instructions.
@@ -54,6 +54,7 @@ This VM will be your build server, where you build new RHEL8 installation images
 
 * Install composer and yum repo tools, used to build your installation image
 of RHEL8:
+
 ```
 dnf install -y dnf-utils createrepo_c composer-cli lorax-composer httpd git
 ```
