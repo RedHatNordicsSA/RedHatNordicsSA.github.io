@@ -122,23 +122,23 @@ used in the RHEL8 build.
 optimizations, they'll will reduce the boot time of your RHEL8 instance down to
 less than 4 seconds (depends on hardware):
 
-* For VMware, edit: /usr/share/lorax/composer/vmdk.ks
-* For OpenStack, edit: /usr/share/lorax/composer/openstack.ks
-* For Amazon EC2, edit: /usr/share/lorax/composer/ami.ks
-* For general purpose KVM, edit: /usr/share/lorax/composer/qcow2.ks
+  * For VMware, edit: /usr/share/lorax/composer/vmdk.ks
+  * For OpenStack, edit: /usr/share/lorax/composer/openstack.ks
+  * For Amazon EC2, edit: /usr/share/lorax/composer/ami.ks
+  * For general purpose KVM, edit: /usr/share/lorax/composer/qcow2.ks
 
-After the below lines
+  After the below lines
   ```
   rm /etc/machine-id
   touch /etc/machine-id
   ```
 
-And before the line coming after touch /etc/machine-id
+  And before the line coming after touch /etc/machine-id
   ```
   %end
   ```
 
-Paste in below optimizations (feel free to add any other things you can think of):
+  Paste in below optimizations (feel free to add any other things you can think of):
   ```
   # Boot time optimization
   sed -i -e 's/GRUB_TIMEOUT=5/GRUB_TIMEOUT=0/' /etc/default/grub
@@ -208,31 +208,31 @@ paste in everything outputted from below command:
 * Now it's time to build your RHEL8 image, depending on what VM platform you
 are to deploy on, you use below commands:
 
-For VMware:
-  ```
-  composer-cli compose start rhel8-base vmdk
-  ```
+  * For VMware:
+    ```
+    composer-cli compose start rhel8-base vmdk
+    ```
 
-For OpenStack:
-  ```
-  composer-cli compose start rhel8-base openstack
-  ```
+  * For OpenStack:
+    ```
+    composer-cli compose start rhel8-base openstack
+    ```
 
-For Amazon:
-  ```
-  composer-cli compose start rhel8-base ami
-  ```
+  * For Amazon:
+    ```
+    composer-cli compose start rhel8-base ami
+    ```
 
-For general purpose KVM:
-  ```
-  composer-cli compose start rhel8-base qcow2
-  ```
+  * For general purpose KVM:
+    ```
+    composer-cli compose start rhel8-base qcow2
+    ```
 
-* Verify the build and when completed, download the disk image:
-  ```
-  composer-cli compose status
-  composer-cli compose image UUID-OF-BUILD
-  ```
+  * Verify the build and when completed, download the disk image:
+    ```
+    composer-cli compose status
+    composer-cli compose image UUID-OF-BUILD
+    ```
 
 # Deploying the virtual machine
 If you are deploying on VMware, Amazon, OpenStack, make your disk image
@@ -256,38 +256,38 @@ I've created.
   sudo c_vm name-of-vm
   ```
 
-Example output
+  Example output
 
-  ```
-  [mglantz@darkred templates]$ time sudo c_vm mtest15
-  Formatting '/var/lib/libvirt/images/mtest15.qcow2', fmt=qcow2 size=16106127360 backing_file=/home/mglantz/code/ansible/vm/rhel8-base-0.6.0.qcow2 cluster_size=65536 lazy_refcounts=off refcount_bits=16
-  Domain mtest15 created from /home/mglantz/code/ansible/vm/templates/mtest15.xml
+    ```
+    [mglantz@darkred templates]$ time sudo c_vm mtest15
+    Formatting '/var/lib/libvirt/images/mtest15.qcow2', fmt=qcow2 size=16106127360 backing_file=/home/mglantz/code/ansible/vm/rhel8-base-0.6.0.qcow2 cluster_size=65536 lazy_refcounts=off refcount_bits=16
+    Domain mtest15 created from /home/mglantz/code/ansible/vm/templates/mtest15.xml
 
-  IP-ADDRESS OF SYSTEM: 192.168.122.181
-   [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost
-  does not match 'all'
-
-
-  PLAY [Provision VM] *************************************************************************************
-
-  TASK [Debug] ********************************************************************************************
-  ok: [localhost] => {
-      "msg": "IP of VM is: 192.168.122.181"
-  }
-
-  TASK [Add host into in-memory inventory] ****************************************************************
-  changed: [localhost]
-
-  TASK [Check so that server is online] *******************************************************************
-  ok: [localhost]
-
-  PLAY RECAP **********************************************************************************************
-  localhost                  : ok=3    changed=1    unreachable=0    failed=0   
+    IP-ADDRESS OF SYSTEM: 192.168.122.181
+     [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost
+    does not match 'all'
 
 
-  real	0m6.663s
-  user	0m1.041s
-  sys	0m0.223s
-  ```
+    PLAY [Provision VM] *************************************************************************************
+
+    TASK [Debug] ********************************************************************************************
+    ok: [localhost] => {
+        "msg": "IP of VM is: 192.168.122.181"
+    }
+
+    TASK [Add host into in-memory inventory] ****************************************************************
+    changed: [localhost]
+
+    TASK [Check so that server is online] *******************************************************************
+    ok: [localhost]
+
+    PLAY RECAP **********************************************************************************************
+    localhost                  : ok=3    changed=1    unreachable=0    failed=0   
+
+
+    real	0m6.663s
+    user	0m1.041s
+    sys	0m0.223s
+    ```
 
 * Enjoy your new fast deployment of RHEL8 :-)
