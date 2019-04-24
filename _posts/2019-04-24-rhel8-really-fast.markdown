@@ -12,9 +12,9 @@ author: mglantz
 This blogpost will be fairly straight forward. It will walk you through the
 process of deploying Red Hat Enterprise Linux 8, really really fast. To do so,
 we'll be using the new ''composer'' tooling in RHEL8 to generate a disk image
-file you can deploy from, to speed things up considerably. To enable you go from
-zero to logging into a new virtual machine instance of RHEL8, in seconds instead
-of minutes.
+file you can deploy from, to speed things up considerably. To enable you to go 
+from zero to logging into a new virtual machine instance of RHEL8, in seconds
+instead of minutes.
 
 On a KVM platform with modern hardware, we can do provisioning in below
 one second and login to our new VM, in less than 7 seconds.
