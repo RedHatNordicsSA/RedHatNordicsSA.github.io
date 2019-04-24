@@ -42,7 +42,7 @@ much faster.
 Let's get started. From here on, there will only be step-by-step instructions.
 
 # Summary of things needed
-* A virtual machine to run your RHEL8 build server
+* A virtual machine to run your RHEL8 build server, it will need a minimum of 30 GB of diskspace allocated to /var/www
 * A VM platform to deploy virtual machines on
 
 
