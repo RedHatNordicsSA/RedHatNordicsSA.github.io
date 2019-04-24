@@ -86,7 +86,7 @@ reposync -n -p /var/www/html --repoid rhel-8-for-x86_64-baseos-htb-rpms --downlo
 reposync -n -p /var/www/html --repoid rhel-8-for-x86_64-appstreams-htb-rpms --downloadcomps --download-metadat
 ```
 
-* Disable all repos from Red Hat Network on your server, the ``composer`` tooling
+* Disable all repos from Red Hat Network on your server, the Composer tooling
  requires this.
 ```
 subscription-manager repos disable=*
@@ -118,7 +118,7 @@ gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release
 EOF
 ```
 
-* Edit the ``composer`` kickstart for your VM platform and input below
+* Edit the Composer kickstart for your VM platform and input below
 optimizations, they'll will reduce the boot time of your RHEL8 instance down to
 less than 4 seconds (depends on hardware):
 
@@ -152,8 +152,8 @@ for item in firewalld.service auditd.service rhsmcertd.service tuned.service spi
 one
 ```
 
-* Create your ``composer`` blueprint. Create the file ``/var/lib/lorax/composer/blueprints/rhel8-base.toml``
-and past in:
+* Create your Composer blueprint. Create the file: /var/lib/lorax/composer/blueprints/rhel8-base.toml
+and paste in:
 ```
 name = "rhel8-base"
 description = "A general purpose rhel8 image"
@@ -247,7 +247,7 @@ I've created.
 git clone https://github.com/mglantz/c_vm
 ```
 
-* Copy ``c_vm``, ``provision_vm.yaml`` and ``template-vm.xml`` to the server you are deploying from and ensure you have ansible installed.
+* Copy c_vm, provision_vm.yaml and template-vm.xml to the server you are deploying from and ensure you have ansible installed.
 
 * Edit c_vm to reflect on where you have your image file, provision_vm.yaml and your template-vm.xml files.
 
