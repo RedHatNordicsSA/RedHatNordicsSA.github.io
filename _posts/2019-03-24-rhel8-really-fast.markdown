@@ -19,7 +19,7 @@ of minutes.
 On a KVM platform with modern hardware, we can do provisioning in below
 one second and login to our new VM, in less than 7 seconds.
 
-Witht hat said, this post is about doing VM deployment much faster, but without
+With that said, this post is about doing VM deployment much faster, but without
 turning it into rocket science.
 
 <p><banner_h>Why</banner_h></p>
