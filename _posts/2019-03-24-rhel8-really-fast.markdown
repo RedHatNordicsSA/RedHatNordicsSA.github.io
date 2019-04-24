@@ -101,23 +101,25 @@ createrepo -v /var/www/html/rhel-8-for-x86_64-apptreams-htb-rpms/ -g $(ls /var/w
 
 * Create local repository files which points to your local repos which you've now created
 ```
-{% raw %}
 cat << EOF >/etc/yum.repos.d/rhel.repo
+{% raw %}
 [baseos-rpms]
+{% endraw %}
 name=baseos-rpms
 baseurl=http://localhost/rhel-8-for-x86_64-baseos-htb-rpms
 enabled=1
 gpgcheck=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release
 
+{% raw %}
 [appstream-rpms]
+{% endraw %}
 name=appstream-rpms
 baseurl=http://localhost/rhel-8-for-x86_64-appstream-htb-rpms
 enabled=1
 gpgcheck=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release
 EOF
-{% endraw %}
 ```
 
 * Edit the Composer kickstart for your VM platform and input below
