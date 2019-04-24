@@ -99,8 +99,7 @@ createrepo -v /var/www/html/rhel-8-for-x86_64-baseos-htb-rpms/ -g $(ls /var/www/
 createrepo -v /var/www/html/rhel-8-for-x86_64-apptreams-htb-rpms/ -g $(ls /var/www/html/rhel-8-for-x86_64-appstreams-htb-rpms/repodata/*comps.xml)
 ```
 
-* Create local repository files which points to your local repos which you've now created
-
+* Create local repository files which points to your local repos which you've now created  
 ```
 cat << EOF >/etc/yum.repos.d/rhel.repo
 [baseos-rpms]
@@ -155,8 +154,7 @@ one
 ```
 
 * Create your Composer blueprint. Create the file: /var/lib/lorax/composer/blueprints/rhel8-base.toml
-and paste in:
-
+and paste in:  
 ```
 name = "rhel8-base"
 description = "A general purpose rhel8 image"
