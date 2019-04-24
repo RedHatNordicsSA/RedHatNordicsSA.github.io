@@ -100,7 +100,7 @@ createrepo -v /var/www/html/rhel-8-for-x86_64-apptreams-htb-rpms/ -g $(ls /var/w
 ```
 
 * Create local repository files which points to your local repos which you've now created
-{% highlight ruby %}
+{% highlight %}
 {% raw %}
 cat << EOF >/etc/yum.repos.d/rhel.repo
 {% raw %}[baseos-rpms]{% endraw %}
