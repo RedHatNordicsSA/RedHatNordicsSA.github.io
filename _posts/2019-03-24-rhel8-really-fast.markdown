@@ -101,14 +101,13 @@ createrepo -v /var/www/html/rhel-8-for-x86_64-apptreams-htb-rpms/ -g $(ls /var/w
 
 * Create local repository files which points to your local repos which you've now created
 ```
-cat << 'EOF' >/etc/yum.repos.d/rhel.repo
+cat << EOF >/etc/yum.repos.d/rhel.repo
 [baseos-rpms]
 name=baseos-rpms
 baseurl=http://localhost/rhel-8-for-x86_64-baseos-htb-rpms
 enabled=1
 gpgcheck=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release
-
 
 [appstream-rpms]
 name=appstream-rpms
