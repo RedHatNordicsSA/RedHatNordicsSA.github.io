@@ -54,7 +54,6 @@ This VM will be your build server, where you build new RHEL8 installation images
 
 * Install composer and yum repo tools, used to build your installation image
 of RHEL8:
-
 ```
 dnf install -y dnf-utils createrepo_c composer-cli lorax-composer httpd git
 ```
