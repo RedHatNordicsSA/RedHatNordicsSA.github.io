@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "How to deploy Red Hat Enterprise Linux 8, really fast"
-date:   2019-03-13 07:30:00 +0200
+date:   2019-03-24 12:23:00 +0200
 tags:
   - rhel8
   - composer
