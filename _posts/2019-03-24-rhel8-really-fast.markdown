@@ -124,10 +124,10 @@ EOF
 optimizations, they'll will reduce the boot time of your RHEL8 instance down to
 less than 4 seconds (depends on hardware):
 
-For VMware, edit: /usr/share/lorax/composer/vmdk.ks
-For OpenStack, edit: /usr/share/lorax/composer/openstack.ks
-For Amazon EC2, edit: /usr/share/lorax/composer/ami.ks
-For general purpose KVM, edit: /usr/share/lorax/composer/qcow2.ks
+* For VMware, edit: /usr/share/lorax/composer/vmdk.ks
+* For OpenStack, edit: /usr/share/lorax/composer/openstack.ks
+* For Amazon EC2, edit: /usr/share/lorax/composer/ami.ks
+* For general purpose KVM, edit: /usr/share/lorax/composer/qcow2.ks
 
 After the below lines
 ```
