@@ -94,8 +94,8 @@ used in the RHEL8 build.
 
 * Create local repositories from which we'll build your RHEL8 installation image
   ```
-  createrepo -v /var/www/html/rhel-8-for-x86_64-baseos-htb-rpms/ -g $(ls /var/www/html/rhel-8-for-x86_64-baseos-htb-rpms/repodata/*comps.xml)
-  createrepo -v /var/www/html/rhel-8-for-x86_64-apptreams-htb-rpms/ -g $(ls /var/www/html/rhel-8-for-x86_64-appstreams-htb-rpms/repodata/*comps.xml)
+  createrepo -v /var/www/html/rhel-8-for-x86_64-baseos-rpms/ -g $(ls /var/www/html/rhel-8-for-x86_64-baseos-rpms/repodata/*comps.xml)
+  createrepo -v /var/www/html/rhel-8-for-x86_64-apptreams-rpms/ -g $(ls /var/www/html/rhel-8-for-x86_64-appstreams-rpms/repodata/*comps.xml)
   ```
 
 * Create local repository files which points to your local repos which you've now created
@@ -103,7 +103,7 @@ used in the RHEL8 build.
   cat << EOF >/etc/yum.repos.d/rhel.repo
   [baseos-rpms]
   name=baseos-rpms
-  baseurl=http://localhost/rhel-8-for-x86_64-baseos-htb-rpms
+  baseurl=http://localhost/rhel-8-for-x86_64-baseos-rpms
   enabled=1
   gpgcheck=1
   gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release
@@ -111,7 +111,7 @@ used in the RHEL8 build.
 
   [appstream-rpms]
   name=appstream-rpms
-  baseurl=http://localhost/rhel-8-for-x86_64-appstream-htb-rpms
+  baseurl=http://localhost/rhel-8-for-x86_64-appstream-rpms
   enabled=1
   gpgcheck=1
   gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release
