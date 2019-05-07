@@ -206,6 +206,7 @@ paste in everything outputted from below command:
 
 * Push your new RHEL8 blueprint and ensure that it's published:
   ```
+  cd /var/lib/lorax/composer/blueprints
   composer-cli blueprints push rhel8-base.toml
   composer-cli blueprints list|grep rhel8-base
   ```
