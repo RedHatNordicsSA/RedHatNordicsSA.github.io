@@ -148,7 +148,8 @@ less than 4 seconds (depends on hardware):
   ' /etc/default/grub
   grub2-mkconfig -o /boot/grub2/grub.cfg
 
-  for item in firewalld.service auditd.service rhsmcertd.service tuned.service spice-vdagentd.socket remote-fs.target dnf-makecache.service chronyd.service kdump.service sssd.service; do systemctl disable $item; done
+  systemctl disable firewalld.service auditd.service rhsmcertd.service tuned.service spice-vdagentd.socket remote-fs.target dnf-makecache.service chronyd.service kdump.service sssd.service
+
   ```
 
 * Create your Composer blueprint. Create the file: /var/lib/lorax/composer/blueprints/rhel8-base.toml
