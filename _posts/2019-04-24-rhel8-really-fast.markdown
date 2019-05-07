@@ -95,7 +95,7 @@ used in the RHEL8 build.
 * Create local repositories from which we'll build your RHEL8 installation image
   ```
   createrepo -v /var/www/html/rhel-8-for-x86_64-baseos-rpms/ -g $(ls /var/www/html/rhel-8-for-x86_64-baseos-rpms/repodata/*comps.xml)
-  createrepo -v /var/www/html/rhel-8-for-x86_64-apptream-rpms/ -g $(ls /var/www/html/rhel-8-for-x86_64-appstream-rpms/repodata/*comps.xml)
+  createrepo -v /var/www/html/rhel-8-for-x86_64-appstream-rpms/ -g $(ls /var/www/html/rhel-8-for-x86_64-appstream-rpms/repodata/*comps.xml)
   ```
 
 * Create local repository files which points to your local repos which you've now created
