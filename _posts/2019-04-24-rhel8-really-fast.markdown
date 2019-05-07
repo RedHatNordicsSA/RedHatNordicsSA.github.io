@@ -79,6 +79,11 @@ used in the RHEL8 build.
   systemctl enable httpd
   systemctl start httpd
   ```
+* Enable the composer service.
+  ```
+  systemctl start lorax-composer.service
+  systemctl enable lorax-composer.service
+  ```
 
 * Sync RHEL8 to your RHEL8 composer server:
   ```
