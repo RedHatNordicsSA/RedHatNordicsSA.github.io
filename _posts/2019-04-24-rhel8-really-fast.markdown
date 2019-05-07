@@ -236,6 +236,8 @@ are to deploy on, you use below commands:
   * Verify the build and when completed, download the disk image:
     ```
     composer-cli compose status
+    tail -f /var/log/messages
+    
     composer-cli compose image UUID-OF-BUILD
     ```
 
