@@ -83,7 +83,7 @@ used in the RHEL8 build.
 * Sync RHEL8 to your RHEL8 composer server:
   ```
   reposync -n -p /var/www/html --repoid rhel-8-for-x86_64-baseos-rpms --downloadcomps --download-metadata
-  reposync -n -p /var/www/html --repoid rhel-8-for-x86_64-appstreams-rpms --downloadcomps --download-metadat
+  reposync -n -p /var/www/html --repoid rhel-8-for-x86_64-appstream-rpms --downloadcomps --download-metadat
   ```
 
 * Disable all repos from Red Hat Network on your server, the Composer tooling
@@ -95,7 +95,7 @@ used in the RHEL8 build.
 * Create local repositories from which we'll build your RHEL8 installation image
   ```
   createrepo -v /var/www/html/rhel-8-for-x86_64-baseos-rpms/ -g $(ls /var/www/html/rhel-8-for-x86_64-baseos-rpms/repodata/*comps.xml)
-  createrepo -v /var/www/html/rhel-8-for-x86_64-apptreams-rpms/ -g $(ls /var/www/html/rhel-8-for-x86_64-appstreams-rpms/repodata/*comps.xml)
+  createrepo -v /var/www/html/rhel-8-for-x86_64-apptream-rpms/ -g $(ls /var/www/html/rhel-8-for-x86_64-appstream-rpms/repodata/*comps.xml)
   ```
 
 * Create local repository files which points to your local repos which you've now created
