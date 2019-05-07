@@ -89,7 +89,7 @@ used in the RHEL8 build.
 * Disable all repos from Red Hat Network on your server, the Composer tooling
  requires this.
   ```
-  subscription-manager repos disable=*
+  subscription-manager repos --disable=*
   ```
 
 * Create local repositories from which we'll build your RHEL8 installation image
