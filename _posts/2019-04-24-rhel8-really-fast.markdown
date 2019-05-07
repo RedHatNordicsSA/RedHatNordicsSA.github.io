@@ -82,8 +82,8 @@ used in the RHEL8 build.
 
 * Sync RHEL8 to your RHEL8 composer server:
   ```
-  reposync -n -p /var/www/html --repoid rhel-8-for-x86_64-baseos-htb-rpms --downloadcomps --download-metadata
-  reposync -n -p /var/www/html --repoid rhel-8-for-x86_64-appstreams-htb-rpms --downloadcomps --download-metadat
+  reposync -n -p /var/www/html --repoid rhel-8-for-x86_64-baseos-rpms --downloadcomps --download-metadata
+  reposync -n -p /var/www/html --repoid rhel-8-for-x86_64-appstreams-rpms --downloadcomps --download-metadat
   ```
 
 * Disable all repos from Red Hat Network on your server, the Composer tooling
