@@ -79,23 +79,28 @@ used in the RHEL8 build.
   systemctl enable httpd
   systemctl start httpd
   ```
+* Enable the composer service.
+  ```
+  systemctl start lorax-composer.service
+  systemctl enable lorax-composer.service
+  ```
 
 * Sync RHEL8 to your RHEL8 composer server:
   ```
-  reposync -n -p /var/www/html --repoid rhel-8-for-x86_64-baseos-htb-rpms --downloadcomps --download-metadata
-  reposync -n -p /var/www/html --repoid rhel-8-for-x86_64-appstreams-htb-rpms --downloadcomps --download-metadat
+  reposync -n -p /var/www/html --repoid rhel-8-for-x86_64-baseos-rpms --downloadcomps --download-metadata
+  reposync -n -p /var/www/html --repoid rhel-8-for-x86_64-appstream-rpms --downloadcomps --download-metadat
   ```
 
 * Disable all repos from Red Hat Network on your server, the Composer tooling
  requires this.
   ```
-  subscription-manager repos disable=*
+  subscription-manager repos --disable=*
   ```
 
 * Create local repositories from which we'll build your RHEL8 installation image
   ```
-  createrepo -v /var/www/html/rhel-8-for-x86_64-baseos-htb-rpms/ -g $(ls /var/www/html/rhel-8-for-x86_64-baseos-htb-rpms/repodata/*comps.xml)
-  createrepo -v /var/www/html/rhel-8-for-x86_64-apptreams-htb-rpms/ -g $(ls /var/www/html/rhel-8-for-x86_64-appstreams-htb-rpms/repodata/*comps.xml)
+  createrepo -v /var/www/html/rhel-8-for-x86_64-baseos-rpms/ -g $(ls /var/www/html/rhel-8-for-x86_64-baseos-rpms/repodata/*comps.xml)
+  createrepo -v /var/www/html/rhel-8-for-x86_64-appstream-rpms/ -g $(ls /var/www/html/rhel-8-for-x86_64-appstream-rpms/repodata/*comps.xml)
   ```
 
 * Create local repository files which points to your local repos which you've now created
@@ -103,7 +108,7 @@ used in the RHEL8 build.
   cat << EOF >/etc/yum.repos.d/rhel.repo
   [baseos-rpms]
   name=baseos-rpms
-  baseurl=http://localhost/rhel-8-for-x86_64-baseos-htb-rpms
+  baseurl=http://localhost/rhel-8-for-x86_64-baseos-rpms
   enabled=1
   gpgcheck=1
   gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release
@@ -111,7 +116,7 @@ used in the RHEL8 build.
 
   [appstream-rpms]
   name=appstream-rpms
-  baseurl=http://localhost/rhel-8-for-x86_64-appstream-htb-rpms
+  baseurl=http://localhost/rhel-8-for-x86_64-appstream-rpms
   enabled=1
   gpgcheck=1
   gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release
@@ -148,7 +153,8 @@ less than 4 seconds (depends on hardware):
   ' /etc/default/grub
   grub2-mkconfig -o /boot/grub2/grub.cfg
 
-  for item in firewalld.service auditd.service rhsmcertd.service tuned.service spice-vdagentd.socket remote-fs.target dnf-makecache.service chronyd.service kdump.service sssd.service; do systemctl disable $item; done
+  systemctl disable firewalld.service auditd.service rhsmcertd.service tuned.service spice-vdagentd.socket remote-fs.target dnf-makecache.service chronyd.service kdump.service sssd.service
+
   ```
 
 * Create your Composer blueprint. Create the file: /var/lib/lorax/composer/blueprints/rhel8-base.toml
@@ -200,6 +206,7 @@ paste in everything outputted from below command:
 
 * Push your new RHEL8 blueprint and ensure that it's published:
   ```
+  cd /var/lib/lorax/composer/blueprints
   composer-cli blueprints push rhel8-base.toml
   composer-cli blueprints list|grep rhel8-base
   ```
@@ -230,6 +237,8 @@ are to deploy on, you use below commands:
   * Verify the build and when completed, download the disk image:
     ```
     composer-cli compose status
+    tail -f /var/log/messages
+    
     composer-cli compose image UUID-OF-BUILD
     ```
 
