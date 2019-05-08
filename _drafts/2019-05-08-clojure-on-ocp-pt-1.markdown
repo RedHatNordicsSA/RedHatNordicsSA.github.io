@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Clojure development using OpenShift, part 1"
-date:   2019-05-03 15:20:00 +0200
+date:   2019-05-08 09:20:00 +0200
 tags: clojure openshift s2i
 author: tfriman
 ---
