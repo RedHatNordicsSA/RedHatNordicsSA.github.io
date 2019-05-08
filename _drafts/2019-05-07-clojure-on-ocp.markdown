@@ -7,7 +7,8 @@ author: tfriman
 ---
 
 <p><banner_h>How to get your Clojure apps running on OpenShift</banner_h></p>
-[Clojure](https://www.clojure.org) is a fantastic language but how you can run that on top of OpenShift?
+[Clojure](https://www.clojure.org) is a fantastic language but how you
+can run Clojure apps on top of OpenShift?
 
 [![clojure logo](https://www.clojure.org/images/clojure-logo-120b.png)](https://www.clojure.org)
 
@@ -28,56 +29,136 @@ So you have your Clojure program ready to be deployed. How does one
 get that running on OpenShift? Well, it's pretty straightforward but
 there are multiple options how to make that happen:
 
-Option 1: use created uberjar and let OpenShift do it's magic with
-binary builds. This may be covered later on but not now.
-
-Option 2: Add source-to-image (S2I) builder to OpenShift and let the
+<b>Option 1</b>: Add source-to-image (S2I) builder to OpenShift and let the
 OpenShift take your application's source code from the SCM and build
 it and create a container out of the binary and then run it. This is
 the way things will be done in this posting series.
+
+<b>Option 2</b>: use created uberjar and let OpenShift do it's magic with
+binary builds. This may be covered later on but not now.
+
+<b>Option 3</b>: use created uberjar and create your container image outside OpenShift. Run that image on OpenShift. Not coverered in this post either.
 
 I assume you know how S2I works but if not check out
 [this](https://github.com/openshift/source-to-image). There are S2I
 builders for many languages out of the box but none for
 Clojure. [Here](https://github.com/tfriman/s2i-clojure) is a simple
-one using [lein](https://leiningen.org). It contains instructions how to install the builder to
-your cluster, please follow them.
+one using [lein](https://leiningen.org). It contains instructions how
+to install the builder to your cluster but for completeness sake I’ll replicate them here.
 
-<p><banner_h>Making builds faster</banner_h></p>
+<p><banner_h>Custom S2I installation to OpenShift 3.11</banner_h></p>
 
-You have multiple options how to make builds faster but they all rely
-on the same method: re-using previous work in some form. One way is to
-enable incremental S2I builds. Incremental S2I build means that
-previously built image with dependencies (in this case dependency jar
-files) is fetched and those dependencies stored on the previous run
-are copied to new build.
+Note that these instructions have been tested with OpenShift version
+3.11.
 
-In practice you can enable clojure-s2i build incremental flag like
-this, using clj-test build from the s2i-clojure repo as an example:
+Login to your OpenShift cluster
 
 ```
-oc patch bc/clj-test -p '{"spec":{"strategy": { "sourceStrategy": {"incremental": true } } } }'
+oc login
 ```
 
-Above patch command updates (creates, if it was missing) the key with
-name 'incremental' under 'sourceStrategy' with value 'true'. You can
-achieve the same using OpenShift web console and navigating to project
-clj-test / builds / clj-test and selecting 'Actions / Edit YAML'
-
-Example run when incremental is on:
+You can install this to any namespace but "openshift" is visible to all by default and it is used when service catalog searches for builders so let's use it.
 
 ```
-# oc start-build clj-test --follow
-
-build.build.openshift.io/clj-test-5 started
-Cloning "https://bitbucket.org/tfriman/clj-rest-helloworld" ...
-	Commit:	10f41ecc9b8469ba1c820ad115fe6f51b53911bf (removed .s2i)
-	Author:	Timo Friman <tfriman@redhat.com>
-	Date:	Mon May 6 16:24:06 2019 +0300
-	Using docker-registry.default.svc:5000/openshift/s2i-clojure@sha256:d71a835bb1aaa9e5e5fbe9e5d7b6610f469ef588446798497764a335ccf4f2f1 as the s2i builder image
-Pulling image "docker-registry.default.svc:5000/clj-test/clj-test:latest" ...
----> Restoring build artifacts...
----> Installing application source...
----> Building application from source...
-Compiling demoapp.config
+oc new-build https://github.com/tfriman/s2i-clojure#v1.0.0 --name s2i-clojure -n openshift
 ```
+
+You can follow the build
+
+```
+oc logs -f bc/s2i-clojure -n openshift
+```
+
+<p><banner_h>Usage example</banner_h></p>
+
+Create a test project
+
+```
+oc new-project clj-test
+```
+
+After the build has finished you can test your new builder:
+
+```
+oc new-build s2i-clojure~https://github.com/tfriman/clj-rest-helloworld#v1.0.0 --name=clj-test
+```
+
+And follow the build
+
+```
+oc logs -f bc/clj-test
+```
+
+After the build has finished create a new app:
+
+```
+oc new-app clj-test
+```
+
+And open the service to the world:
+
+```
+oc expose svc/clj-test
+```
+
+See the url for the application
+
+```{% raw %}
+oc get routes clj-test --template='{{ .spec.host }}'
+{% endraw %}```
+
+And open it using your browser.
+
+<p><banner_h>Making s2i-clojure builder visible to catalog</banner_h></p>
+
+You can use your custom builder from command line without getting it
+to catalog but it would be nice to get this to UI as well so here
+goes:
+
+First you need to edit the image stream:
+
+```
+oc edit is/s2i-clojure -n openshift -o json
+```
+
+Make it look like this, add the missing parts, don't remove things:
+
+```
+{
+    "kind": "ImageStream",
+    "apiVersion": "v1",
+    "metadata": {
+	"name": "s2i-clojure-builder",
+	"annotations": {
+	    "openshift.io/display-name": "S2I Clojure"
+	}
+    },
+    "spec": {
+	"tags": [
+	    {
+		"name": "latest",
+		"annotations": {
+		    "openshift.io/display-name": "S2I Clojure",
+		    "description": "Build and deploy a Clojure app",
+		    "iconClass": "icon-clojure",
+		    "sampleRepo": "https://github.com/tfriman/clj-rest-helloworld",
+		    "sampleRef": "v1.0.0",
+		    "tags": "builder,clojure",
+		    "version": "latest",
+		    "supports": "clojure"
+		},
+		"from": {
+		    "kind": "DockerImage",
+		    "name": "s2i-clojure:latest"
+		}
+	    }
+	]
+    }
+}
+
+```
+
+Wait for a while to catalog service to catch up and your Clojure S2I
+builder should appear in the catalog under section "other".
+
+Happy Clojure development using S2I!
