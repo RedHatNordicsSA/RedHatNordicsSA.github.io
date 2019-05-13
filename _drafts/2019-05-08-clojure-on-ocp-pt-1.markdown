@@ -107,7 +107,9 @@ See the url for the application
 oc get routes clj-test --template='{{ .spec.host }}'
 {% endraw %}```
 
-And open it using your browser.
+And open it using your browser. It should look like this:
+
+![luminus-screenshot](assets/images/clj-post-luminus-screenshot.png)
 
 <p><banner_h>Making s2i-clojure builder visible to catalog</banner_h></p>
 
