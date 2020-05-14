@@ -83,3 +83,23 @@ Happy blogging!
 References:
 
 Ilkka's original [Writing new blog on Jekyll](./new-post)
+
+Update 2020-5-14 by Ilkka: Thanks Timo, I add here how I do the same
+with podman:
+
+```
+podman run --name jekyll \
+  -e 'TZ=Europe/Helsinki'  \
+  --volume="$PWD:/srv/jekyll:z" \
+  -it \
+  -p 4000:4000 \
+  jekyll/jekyll \
+  jekyll serve
+```
+
+that will exit, and then just rerun it, I don't tag image:
+
+```
+podman start jekyll
+podman logs -f jekyll
+```
