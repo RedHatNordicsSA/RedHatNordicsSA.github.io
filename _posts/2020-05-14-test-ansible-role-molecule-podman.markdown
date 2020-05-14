@@ -63,9 +63,6 @@ In this blog I shortly describe the process of running all this in podman on
 RHEL8, as that's the use case at hand. I trust you learn molecule and ansible
 from elsewhere. By making this public, I hope you can reuse it in your work.
 
-You can extend the range of containers used to other platforms too. I just keep
-it simple here.
-
 # Let's go through the process
 
 We use RHEL8 in the guide, along with [RHEL8 UBI container images][ubi8]. RHEL
@@ -112,8 +109,11 @@ If there is an existing ansible role, add just the molecule files:
 molecule init scenario -r ftp --driver-name podman
 ```
 
-Note, I've done an example which has the molecule set, get it with
-```git clone molecule-podman-blog```. Read the following chapters and play with
+Note, I've done an example which has the molecule set, get it with:
+
+```git clone https://github.com/RedHatNordicsSA/molecule-podman-blog.git```
+
+Read the following chapters and play with
 it by modifying the settings and test cases.
 
 ## Molecule
