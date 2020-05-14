@@ -19,7 +19,7 @@ to use test process to unify the looks and quality of the roles.
 Meet [Molecule][molecule-docs] with [Podman][podman] plugin and
 [Ansible][ansible] as test language!
 
-![molecule-logo](https://github.com/containers/libpod/raw/master/logo/molecule-logo.png){: height="80px"}
+![molecule-logo](https://github.com/RedHatNordicsSA/RedHatNordicsSA.github.io/raw/master/assets/images/molecule-logo.png){: height="80px"}
 ![plus](assets/images/plus.png){:height="40px"}
 ![podman-logo](https://github.com/containers/libpod/raw/master/logo/
 podman-logo.png){: height="80px"}
