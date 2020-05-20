@@ -53,7 +53,7 @@ definition in git. This can be run from git commit or merge hook for GitOps.
 See how it was done in [Fevermap][fevermap].
 
 You can also get some more info about this in Youtube:
-<iframe width="560" height="315" src="https://www.youtube.com/embed/FYS6Mrg53PE"
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Zhmvd02MAlQ"
 frameborder="0"
 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
 allowfullscreen>
