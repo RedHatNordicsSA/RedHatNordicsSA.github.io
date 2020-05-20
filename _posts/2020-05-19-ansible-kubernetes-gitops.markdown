@@ -52,7 +52,12 @@ definition in git. This can be run from git commit or merge hook for GitOps.
 
 See how it was done in [Fevermap][fevermap].
 
-TBD: add Youtube video here.
+You can also get some more info about this in Youtube:
+<iframe width="560" height="315" src="https://www.youtube.com/embed/FYS6Mrg53PE"
+frameborder="0"
+allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+allowfullscreen>
+</iframe>
 
 # Application
 
@@ -324,9 +329,16 @@ knowing you are safe with your private data.
 
 What a benefit, open source your ops!
 
+There are other ways also, not one fills every purpose. I recommend you to take
+a look at e.g ArgoCD and Flux. Here is some further reading for you:
+
+* [Introduction to GitOps with OpenShift](https://www.openshift.com/blog/
+introduction-to-gitops-with-openshift)
+* [ArgoCD](https://argoproj.github.io/argo-cd/)
+* [Flux](https://github.com/fluxcd/flux)
+
 BR,
 Ilkka
-
 
 [k8s]: https://docs.ansible.com/ansible/latest/modules/k8s_module.html
 [fevermap]: https://fevermap.net
