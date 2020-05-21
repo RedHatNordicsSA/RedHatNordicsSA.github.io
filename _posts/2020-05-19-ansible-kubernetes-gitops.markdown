@@ -44,7 +44,7 @@ All different sites are version controlled in Git. Applying them to a given
 environment is super easy:
 
 ```
-ansible -i staging fevermap.yml
+ansible-playbook -i staging fevermap.yml
 ```
 
 This builds the site from scratch, or can ensure the environment matches the
@@ -250,9 +250,9 @@ Depending on the site or component, I can install or delete the whole
 application or just update the components of it, like here:
 
 ```
-ansible -i staging fevermap.yml
-ansible -i konttikoulu_production fevermap.yml -t api
-ansible -i dev fevermap.yml -e state=absent
+ansible-playbook -i staging fevermap.yml
+ansible-playbook -i konttikoulu_production fevermap.yml -t api
+ansible-playbook -i dev fevermap.yml -e state=absent
 ```
 
 Say, I'd need to update Google API key, I'd update the secret in ansible vault,
@@ -260,7 +260,7 @@ and I could then just run the secrets role to production.
 
 ```
 ansible-vault edit  group_vars/production/vault
-ansible -i production fevermap.yml -t secrets
+ansible-playbook -i production fevermap.yml -t secrets
 ```
 
 # GitOps part
@@ -296,8 +296,8 @@ production_ops:
   rules:
     - if: $CI_COMMIT_REF_NAME =~ /ocp/ansible/
   script:
-    - ansible -i staging fevermap.yml
-    - ansible -i production fevermap.yml
+    - ansible-playbook -i staging fevermap.yml
+    - ansible-playbook -i production fevermap.yml
 ```
 
 # Ansible Tower
