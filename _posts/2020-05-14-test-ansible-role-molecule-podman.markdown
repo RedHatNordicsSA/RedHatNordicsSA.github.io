@@ -106,10 +106,11 @@ molecule init role my-new-role --driver-name podman
 If there is an existing ansible role, add just the molecule files:
 
 ```
-molecule init scenario -r ftp --driver-name podman
+molecule init scenario ftp --driver-name podman
 ```
+Please note that the directory and the role name needs to be the same thing. Naming of roles are done with the name of the directory, if meta data doesn't say otherwise.
 
-Note, I've done an example which has the molecule set, get it with:
+Also, note, I've done an example which has the molecule set, get it with:
 
 ```git clone https://github.com/RedHatNordicsSA/molecule-podman-blog.git```
 
