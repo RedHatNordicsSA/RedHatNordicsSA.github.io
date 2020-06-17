@@ -89,6 +89,8 @@ pip install ansible testinfra molecule podman python-vagrant ansible-lint \
 
 ## Apply molecule to ansible role
 
+Please note that the molecule test we are going to do require you to be the ```root``` user!
+
 Activate molecule virtual environment if already didn't:
 
 ```
