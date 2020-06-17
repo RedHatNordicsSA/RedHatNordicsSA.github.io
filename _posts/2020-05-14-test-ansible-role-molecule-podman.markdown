@@ -103,13 +103,13 @@ molecule config and test files.
 molecule init role my-new-role --driver-name podman
 ```
 
-If there is an existing ansible role, add just the molecule files:
+If you have an existing ansible role, and want to add molecule testing to that role, run:
 
 ```
 molecule init scenario -r ftp --driver-name podman
 ```
-Note, I've done an example which has the molecule set, get it with:
 
+If you are a bit lazy and just want to go on with testing molecule, git clone the below example role with added molecule testing:
 ```git clone https://github.com/RedHatNordicsSA/molecule-podman-blog.git```
 
 Read the following chapters and play with
