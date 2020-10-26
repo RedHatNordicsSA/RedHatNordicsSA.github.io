@@ -166,7 +166,8 @@ other hand, it does a bit more! It utilizes an excellent fuzzy
 matching tool called [fzf](https://github.com/junegunn/fzf) for
 capturing missing inputs (channel and/or version). I found [a blog
 posting](https://junegunn.kr/2016/02/using-fzf-in-your-program/)
-describing how to use fzf with Clojure.
+describing how to use fzf with Clojure. I also chose not to create
+helper functions to make it more look like the jq version.
 
 Complete source code is
 [here](https://github.com/tfriman/ocp-available-updates-fetcher). I
