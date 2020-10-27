@@ -192,6 +192,9 @@ If you just want to see this in action, view this:
 
 [![asciicast](https://asciinema.org/a/zKQ2rOyDzJVBVr3UEZu3Lr93v.svg)](https://asciinema.org/a/zKQ2rOyDzJVBVr3UEZu3Lr93v?autoplay=1&rows=30)
 
+
+# Conclusions
+
 Overall I was very happy with Babashka, it starts blazingly fast due
 to the native compilation and has nice error messages (for some reason
 I got used to those during the hacking phase;-) This simple exercise
@@ -199,3 +202,21 @@ proved me Clojure can be used for shell scripting as well :)
 
 Thanks for Borkdude a.k.a. Michiel Borkent and Junegunn Choi for
 creating and open sourcing these excellent tools!
+
+# Edit 2020-10-27
+
+I got a question on LinkedIn about overall experience and difference
+to bash scripting (Thanks Antti Rintala). Experience was a pleasant
+one and I got this done pretty quickly. I wrote the script in the old
+way how I'm used to develop shell scripts: write script using Emacs
+and then run it on terminal, rinse and repeat until done. I should
+have used REPL for the development and get things done even
+faster. Compared to ordinary shell scripts Clojure (or basically any
+'proper' programming language suitable for shell scripting like
+Python) provides a much better flow control. I also could have easily
+added test to verify the functionality.
+
+On the other hand, ordinary shell scripting has a great advantage: it
+is very easy to pipe data between tools even interactively. To employ
+fzf on this Babashka script I had to copy&paste macro for in/out
+redirecting.
