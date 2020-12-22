@@ -23,7 +23,7 @@ Wouldn't it be wonderful to run Ansible AWX ([Tower upstream](https://www.ansibl
 
 ![awx-stack](/assets/images/awx-stack.png)
 
-With only this little amount of automation code (run-aws playbook):
+With only this little amount of automation code (run-awx playbook):
 
 ```
 {%raw%}
@@ -166,13 +166,13 @@ close to kubernetes configuration file format.
 # How does this yaml get used by systemd?
 
 Let's look at the Ansible playbook and roles organization. Following picture
-shows what happens behind the run-aws.yml playbook you saw in the first chapter.
+shows what happens behind the run-awx.yml playbook you saw in the first chapter.
 
 ![awx-pod](/assets/images/awx-ansibles.png)
 
-You see from above that run-aws.yml depends on two Ansible roles:
+You see from above that run-awx.yml depends on two Ansible roles:
 
-1. [aws_pod](https://github.com/ikke-t/awx_pod)
+1. [awx_pod](https://github.com/ikke-t/awx_pod)
 2. [podman_container_systemd](https://github.com/ikke-t/podman-container-systemd)
 
 After writing the first blog of this series, I added new role 'awx_pod' for
