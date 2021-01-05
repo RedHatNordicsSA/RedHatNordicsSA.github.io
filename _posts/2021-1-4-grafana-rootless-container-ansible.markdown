@@ -17,7 +17,7 @@ and running in rootless container. How can I automate rootless containers?
 
 The business reason for spending time for this is to show how one could
 automate Edge computing environments in Edge/IoT small scale devices. There
-you'd develope and test your solutions in Kubernetes, and push the software as
+you'd develop and test your solutions in Kubernetes, and push the software as
 containers to small edge devices using Ansible Tower and this kinda setup for
 example.
 
