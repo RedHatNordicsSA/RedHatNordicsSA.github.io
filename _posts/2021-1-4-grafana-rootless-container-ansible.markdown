@@ -71,7 +71,7 @@ containers. I use RHEL 8 Edge during the process.
 
 ## User systemd services
 
-First of all the serivce files need to be put into users home dir instead of
+First of all the service files need to be put into users home dir instead of
 system config dirs ```/etc/systemd/system``` or ```/usr/lib/systemd/system```.
 Technicly, there is also a user dir, but I want them private to user.
 
