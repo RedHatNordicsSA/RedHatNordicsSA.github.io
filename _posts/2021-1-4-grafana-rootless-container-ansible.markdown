@@ -13,7 +13,7 @@ author: ikke
 I have rather much services and home automation running at home. I want to monitor
 their state and get alerted if something is out of the normal. I had grafana set up
 for the job, but now had to move servers. While at it, I want it fully automatized
-and running in rootless container. How can I automate rootless containers?
+and running in a rootless container. How can I automate rootless containers?
 
 The business reason for spending time for this is to show how one could
 automate Edge computing environments in Edge/IoT small scale devices. There
@@ -31,21 +31,22 @@ podman-logo.png){: height="80px"}
 ![ansible-logo](assets/images/ansible_logo.png){:height="80px"}
 
 Oh, and why rootless? Well, it's yet another layer of security. Even if the
-evil blackhat managed to fight breaking into your container, managed to find
-a security hole to punch through container and SELinux, there is yet another
-layer of trouble. At this point one is not root, but just a regular user,
-which has no privileges in the system.
+evil blackhat managed to fight breaking into your container, managed to find a
+security hole to punch through the container and SELinux, there is yet another
+layer of trouble. At this point one is not root, but just a regular user, which
+has no privileges in the system.
 
-Also, you don't necessarily need root privileges at all in target to run
+Also, you don't necessarily need root privileges at all in the target to run
 containers.
 
 # Description of the environment
 
 I've been writing earlier how to ansible podman containers, but only now added the
-rootless option to my ansible role. Also, for my delight, I noticed there is [ansible
-module for grafana](https://github.com/ansible-collections/community.grafana) setup.
+rootless option to my ansible role. Also, to my delight, I noticed there is an
+[ansible module for grafana](https://github.com/ansible-collections/community.grafana)
+setup.
 
-In this article I'll setup grafana with a dummy dashboard and some test users.
+In this article I'll set up grafana with a dummy dashboard and some test users.
 Normally I connect grafana to my influxdb data source to where my
 [OPNSense](http://opnsense.org/) firewall/router pushes HAproxy load balancer
 stats, along with tons of other stuff like [OpenHAB](https://www.openhab.org/)
@@ -53,7 +54,7 @@ home automation and monitor statuses. Grafana then serves me with alerts when
 necessary.
 
 I describe what does it take to make Ansible create persistent containers using
-podman using user only privileges for container. Compared to Docker, it's
+podman using user only privileges for containers. Compared to Docker, it's
 systemd which manages these user processes here. I'll focus on the changes
 needed around systemd.
 
@@ -66,14 +67,15 @@ I use the same
 role as I used in my earlier
 [ansible podman systemd articles](https://redhatnordicssa.github.io/ansible-podman-containers-1).
 Let's go through here what had to be changed to make it work in user mode, as
-well changed needed in Fedora CoreOS and deriative servers intended to run only
+well changed needed in Fedora CoreOS and derivative servers intended to run only
 containers. I use RHEL 8 Edge during the process.
 
 ## User systemd services
 
-First of all the service files need to be put into users home dir instead of
-system config dirs ```/etc/systemd/system``` or ```/usr/lib/systemd/system```.
-Technicly, there is also a user dir, but I want them private to user.
+First of all the service files need to be put into the user's home dir instead
+of system config dirs ```/etc/systemd/system``` or
+```/usr/lib/systemd/system```.  Technically, there is also a user dir, but I want
+them private to the user.
 
 [Here's how](https://github.com/ikke-t/podman-container-systemd/blob/9a0bf79a47b569050e09dcfb3a367dffbf39b4d8/tasks/main.yml#L12)
 ```{% raw %}
@@ -93,10 +95,10 @@ Technicly, there is also a user dir, but I want them private to user.
 
 ## Persistent DBUS session
 
-The biggest hurdle for me was to understand how such service user gets
-DBUS session which remains there over boots, even if user never logs in.
-This happens by setting up a "lingering" session for user, which activates
-DBUS for given user at boot.
+The biggest hurdle for me was to understand how such a service user gets a
+DBUS session which remains there over boots, even if the user never logs in.
+This happens by setting up a "lingering" session for the user, which activates
+DBUS for a given user at boot.
 
 [See here](https://github.com/ikke-t/podman-container-systemd/blob/9a0bf79a47b569050e09dcfb3a367dffbf39b4d8/tasks/main.yml#L159)
 
@@ -117,8 +119,8 @@ DBUS for given user at boot.
 
 Next thing is that systemd commands need to be all
 [executed in user scope](https://github.com/ikke-t/podman-container-systemd/blob/9a0bf79a47b569050e09dcfb3a367dffbf39b4d8/tasks/main.yml#L33).
-As we don't log in as target user, we achieve this by setting environment variable
-for ```xdg_runtime_dir``` to find user lingering DBUS session later.
+As we don't log in as the target user, we achieve this by setting an environment
+variable for ```xdg_runtime_dir``` to find the user's lingering DBUS session later.
 
 [See here](https://github.com/ikke-t/podman-container-systemd/blob/9a0bf79a47b569050e09dcfb3a367dffbf39b4d8/tasks/main.yml#L33)
 
@@ -139,7 +141,7 @@ for ```xdg_runtime_dir``` to find user lingering DBUS session later.
 
 ## Systemd service file target change
 
-Systemd session file has to be changed to default target when run in rootless.
+Systemd session file has to be changed to the default target when run in rootless.
 [See here](https://github.com/ikke-t/podman-container-systemd/blob/9a0bf79a47b569050e09dcfb3a367dffbf39b4d8/templates/systemd-service-single.j2#L26)
 ```{% raw  %}
 [Install]
@@ -169,13 +171,13 @@ the DBUS session
     state: started
 {% endraw  %}```
 
-Note that we switch to given user, and set the runtime dir to catch the dbus.
+Note that we switch to a given user, and set the runtime dir to catch the dbus.
 Also the scope is set to user instead of system.
 
 ## RPM-OSTREE package handling
 
 As I said, I want to run my containers in minimal Fedora-CoreOS based
-machines. There is a quirk that ansible doesn't have proper package
+machines. There is a quirk that ansible doesn't have a proper package
 module for such. So checking and installing packages needs to be worked
 around
 [like this](https://github.com/ikke-t/podman-container-systemd/blob/9a0bf79a47b569050e09dcfb3a367dffbf39b4d8/tasks/main.yml#L227)
@@ -244,7 +246,7 @@ Where the following needs to be changed to be applicable to your system:
 * ```edge``` is my VM server ssh address.
 * cloud-user is the sudo privileged user in target VM
  
-And, drumroll, TADAA we have our grafana runnning in user session as container
+And, drumroll, TADAA we have our grafana running in user session as container
 (http://your_vm:3000):
 
 ![grafana dashboard](assets/images/grafana-dashboard.png)
@@ -267,10 +269,10 @@ And here I get alerts if house heating has stopped due fault:
 
 ## To debug things locally in target
 
-As we run containers as user, and this ansible role places them under user
-context of systemd, you need to setup DBUS related env variable to get to use
-systemd as given user. However, the user does not have login credentials. You
-need to switch manually to user using su, sudo will not work as original UID
+As we run containers as a user, and this ansible role places them under the user
+context of systemd, you need to set up a DBUS related env variable to get to use
+systemd as the given user. However, the user does not have login credentials. You
+need to switch manually to user using su, sudo will not work as the original UID
 would show your ssh user UID.
 
 ```{% raw %}
@@ -317,8 +319,8 @@ CONTAINER ID  IMAGE                             COMMAND  CREATED         STATUS 
 
 Now that we saw how it works, it's time to clean up stuff. Beware that the
 "nuke=true" option removes both the grafana user and the data, so make sure
-there is nothing important you could loose. Again, remove the pkg_mgr if not
-on RHEL Edge target.
+there is nothing important you could lose. Again, remove the pkg_mgr if not
+on the RHEL Edge target.
 
 ```{% raw %}
 ansible-playbook -i edge, -u cloud-user -b \
@@ -330,9 +332,9 @@ ansible-playbook -i edge, -u cloud-user -b \
 
 # Conclusion
 
-Podman and systemd are good mechanism to run containers in small setups where
-kubernetes would be overkill. Ansible is robust way to create such setups.
-Sometimes, like here, you don't even need backups, as target is super easy
+Podman and systemd are good mechanisms to run containers in small setups where
+kubernetes would be overkill. Ansible is a robust way to create such setups.
+Sometimes, like here, you don't even need backups, as the target is super easy
 to create from scratch by ansible.
 
 For further reading about podman and systemd, please see:
