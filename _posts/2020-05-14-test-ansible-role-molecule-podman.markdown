@@ -142,6 +142,10 @@ platforms:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
     privileged: true
     command: "/usr/sbin/init"
+lint: |
+  yamllint .
+  ansible-lint
+  flake8
 provisioner:
   name: ansible
 verifier:
@@ -163,7 +167,7 @@ would have needed a change.
       package:
         name: vsftpd
         state: present
-      check_mode: yes
+      check_mode: true
       register: pkg
 
     - name: fail if package was not installed
@@ -172,6 +176,34 @@ would have needed a change.
           - pkg.changed is false
         fail_msg: "Package vsftpd was not installed!"
         success_msg: "Package vsftpd was installed."
+```
+
+## Linting
+To check if your Ansible code is up to scratch, you can run it via the different external linting tools you have pointed out in your molecule.yml file. You are recommended to use at least both ansible-lint and a yaml linter for the most crispy clean Ansible code.
+
+To only do linting of your code, run:
+```
+molecule lint
+```
+
+Example if code without any issues:
+```
+(molecule_ansible) [cloud-user@localhost ftp]$ molecule lint
+--> Test matrix
+    
+└── default
+    ├── dependency
+    └── lint
+    
+--> Scenario: 'default'
+--> Action: 'dependency'
+Skipping, missing the requirements file.
+Skipping, missing the requirements file.
+--> Scenario: 'default'
+--> Action: 'lint'
+--> Executing: yamllint .
+ansible-lint
+flake8
 ```
 
 ## Podman
