@@ -13,7 +13,7 @@ We have some of demo environments in use, and we start here by describing our de
 
 ## Automation samples available as code
 
-We aim to collect all automation code as Ansible playbooks and roles into our git repository, [https://github.com/redhatnordicssa].
+We aim to collect all automation code as Ansible playbooks and roles into our [git repository](https://github.com/redhatnordicssa).
 
 There will Ansible playbooks (to mention some)
 
