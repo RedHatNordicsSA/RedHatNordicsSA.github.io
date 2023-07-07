@@ -250,7 +250,7 @@ not deal with that :-)
 * If you are deploying the VM image on a KVM host, you can borrow some tooling
 I've created.
 
-* Clone the (https://github.com/mglantz/c_vm)[c_vm] GitHub repository:
+* Clone the [c_vm](https://github.com/mglantz/c_vm) GitHub repository:
   ```
   git clone https://github.com/mglantz/c_vm
   ```
